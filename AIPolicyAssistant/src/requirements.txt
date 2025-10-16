@@ -4,3 +4,7 @@ mlflow
 kuzu
 networkx
 plotly
+presidio-analyzer
+presidio-anonymizer
+textstat
+ragas
