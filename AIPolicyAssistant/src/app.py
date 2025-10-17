@@ -42,7 +42,6 @@ EVALUATION_AVAILABLE = PRESIDIO_AVAILABLE and TEXTSTAT_AVAILABLE
 # ============================================================================
 st.set_page_config(
     page_title="ACA Policy Assistant",
-    page_icon="🏥",
     layout="wide"
 )
 
@@ -92,7 +91,7 @@ def get_data_sources(_conn):
             row = result.get_next()
             if row[1]:  # Only add if URL exists
                 sources.append({
-                    'title': row[0] or 'Untitled',
+                    'title': row[0] or '26 U.S. Code § 9831 - General exceptions',
                     'url': row[1],
                     'auth_type': row[2] or 'N/A',
                     'cite': row[3] or 'N/A',
@@ -346,6 +345,12 @@ def create_network_graph(nodes, edges):
         x0, y0 = pos[edge['source']]
         x1, y1 = pos[edge['target']]
         
+        # Create detailed hover text for edges
+        edge_hover = f"<b>Relationship:</b> {edge['relationship']}<br>"
+        edge_hover += f"<b>From:</b> {edge['source']}<br>"
+        edge_hover += f"<b>To:</b> {edge['target']}<br>"
+        edge_hover += f"<b>Details:</b><br>{edge['description']}"
+        
         # Create edge line
         edge_trace = go.Scatter(
             x=[x0, x1, None],
@@ -353,8 +358,13 @@ def create_network_graph(nodes, edges):
             mode='lines',
             line=dict(width=2, color='#95a5a6'),
             hoverinfo='text',
-            hovertext=f"{edge['relationship']}: {edge['description'][:50]}...",
-            showlegend=False
+            hovertext=edge_hover,
+            showlegend=False,
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            )
         )
         edge_traces.append(edge_trace)
         
@@ -383,7 +393,33 @@ def create_network_graph(nodes, edges):
         node_traces[node_type]['x'].append(x)
         node_traces[node_type]['y'].append(y)
         node_traces[node_type]['text'].append(node['label'])
-        hover_text = f"<b>{node['label']}</b><br>{node['description'][:100]}..."
+        
+        # Create detailed hover text for nodes with better formatting
+        hover_text = f"<b style='font-size:14px'>{node['label']}</b><br>"
+        hover_text += f"<b>Type:</b> {node_type}<br>"
+        hover_text += f"<b>Description:</b><br>"
+        
+        # Format description with line breaks for better readability
+        description = node['description'] if node['description'] else 'No description available'
+        # Split long descriptions into multiple lines (wrap at ~60 chars)
+        words = description.split()
+        lines = []
+        current_line = []
+        current_length = 0
+        
+        for word in words:
+            if current_length + len(word) + 1 > 60:
+                lines.append(' '.join(current_line))
+                current_line = [word]
+                current_length = len(word)
+            else:
+                current_line.append(word)
+                current_length += len(word) + 1
+        
+        if current_line:
+            lines.append(' '.join(current_line))
+        
+        hover_text += '<br>'.join(lines)
         node_traces[node_type]['hovertext'].append(hover_text)
     
     # Create Plotly traces for nodes
@@ -402,6 +438,12 @@ def create_network_graph(nodes, edges):
                 size=20,
                 color=data['color'],
                 line=dict(width=2, color='white')
+            ),
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial",
+                align="left"
             )
         )
         plotly_node_traces.append(trace)
@@ -424,6 +466,11 @@ def create_network_graph(nodes, edges):
             y=0.99,
             xanchor="left",
             x=0.01
+        ),
+        hoverlabel=dict(
+            bgcolor="white",
+            font_size=12,
+            font_family="Arial"
         )
     )
     
@@ -752,14 +799,28 @@ def evaluate_response(question: str, response: str, context: str = "") -> Dict[s
         pii_types = list(set([result.entity_type for result in pii_results]))
         pii_count = len(pii_results)
         
+        # Extract actual PII instances with their text and positions
+        pii_instances = []
+        for result in pii_results:
+            pii_text = response[result.start:result.end]
+            pii_instances.append({
+                "type": result.entity_type,
+                "text": pii_text,
+                "start": result.start,
+                "end": result.end,
+                "score": result.score
+            })
+        
         metrics["pii_detected"] = pii_found
         metrics["pii_count"] = pii_count
         metrics["pii_types"] = pii_types
+        metrics["pii_instances"] = pii_instances
         metrics["pii_score"] = 0.0 if pii_found else 1.0  # 1.0 = no PII (good)
     except Exception as e:
         metrics["pii_detected"] = False
         metrics["pii_count"] = 0
         metrics["pii_types"] = []
+        metrics["pii_instances"] = []
         metrics["pii_score"] = 1.0
         metrics["pii_error"] = str(e)
     
@@ -1001,11 +1062,11 @@ def log_to_mlflow(question: str, response: str, metrics: Dict[str, Any],
 if 'query_history' not in st.session_state:
     st.session_state.query_history = []
 
-st.title("🏥 ACA Policy Assistant")
+st.title("ACA Policy Assistant")
 st.markdown("Ask questions about Health Reimbursement Arrangements (HRAs)")
 
 # Create tabs for different views
-tab1, tab2, tab3 = st.tabs(["💬 Chat", "🕸️ Graph Visualization", "📚 Data Sources"])
+tab1, tab2, tab3 = st.tabs(["Chat", "Graph Visualization", "Data Sources"])
 
 with tab2:
     st.header("Graph Visualization")
@@ -1014,7 +1075,7 @@ with tab2:
     # Quick link to Data Sources tab
     data_sources_tab = get_data_sources(conn)
     if data_sources_tab:
-        st.info(f"📚 This graph is built from **{len(data_sources_tab)} authoritative sources**. Click the **'Data Sources' tab** to explore them!")
+        st.info(f"This graph is built from **{len(data_sources_tab)} authoritative sources**. Click the **'Data Sources' tab** to explore them!")
     
     # Fetch and display graph
     with st.spinner("Loading graph data..."):
@@ -1022,7 +1083,7 @@ with tab2:
         
         if nodes and edges:
             # Create filter section
-            st.subheader("🔍 Filters")
+            st.subheader("Filters")
             
             filter_col1, filter_col2, filter_col3 = st.columns(3)
             
@@ -1057,7 +1118,7 @@ with tab2:
             
             # Additional stakeholder filter
             stakeholder_options = sorted([n['id'] for n in nodes if n['type'] == 'Stakeholder'])
-            with st.expander("🔧 Advanced Filters"):
+            with st.expander("Advanced Filters"):
                 selected_stakeholders = st.multiselect(
                     "Specific Stakeholders",
                     options=stakeholder_options,
@@ -1097,30 +1158,30 @@ with tab2:
             col1, col2, col3 = st.columns(3)
             with col1:
                 hra_count = len([n for n in filtered_nodes if n['type'] == 'HRAType'])
-                st.metric("HRA Types", hra_count, "🔵")
+                st.metric("HRA Types", hra_count)
             with col2:
                 stakeholder_count = len([n for n in filtered_nodes if n['type'] == 'Stakeholder'])
-                st.metric("Stakeholders", stakeholder_count, "🟢")
+                st.metric("Stakeholders", stakeholder_count)
             with col3:
-                st.metric("Relationships", len(filtered_edges), "🔗")
+                st.metric("Relationships", len(filtered_edges))
             
             # Show warning if filters result in empty graph
             if not filtered_nodes or not filtered_edges:
-                st.warning("⚠️ No nodes or relationships match your current filters. Try adjusting your filter selections.")
+                st.warning("No nodes or relationships match your current filters. Try adjusting your filter selections.")
             else:
                 # Create and display graph
                 fig = create_network_graph(filtered_nodes, filtered_edges)
                 st.plotly_chart(fig, use_container_width=True)
                 
                 # Show data table
-                with st.expander("📊 View Filtered Relationships Data"):
+                with st.expander("View Filtered Relationships Data"):
                     df = pd.DataFrame(filtered_edges)
                     st.dataframe(df, use_container_width=True)
         else:
             st.warning("No graph data available or error loading data.")
 
 with tab3:
-    st.header("📚 Authoritative Data Sources")
+    st.header("Authoritative Data Sources")
     st.markdown("""
     This knowledge graph is built from official government documents and authoritative sources.
     All information is traceable to these primary sources.
@@ -1134,13 +1195,13 @@ with tab3:
         # Summary metrics at top
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("📄 Total Sources", len(all_sources))
+            st.metric("Total Sources", len(all_sources))
         with col2:
             auth_types = set(s['auth_type'] for s in all_sources)
-            st.metric("📋 Document Types", len(auth_types))
+            st.metric("Document Types", len(auth_types))
         with col3:
             clickable_sources = sum(1 for s in all_sources if s['url'] and s['url'].startswith('http'))
-            st.metric("🔗 Online Sources", clickable_sources)
+            st.metric("Online Sources", clickable_sources)
         
         st.markdown("---")
         
@@ -1148,7 +1209,7 @@ with tab3:
         col1, col2, col3 = st.columns([3, 1, 1])
         with col1:
             search_term = st.text_input(
-                "🔍 Search sources and content", 
+                "Search sources and content", 
                 placeholder="Search metadata, HRA types, stakeholders, descriptions...",
                 help="Search through source metadata AND graph content (HRA types, stakeholders, descriptions)"
             )
@@ -1203,14 +1264,14 @@ with tab3:
             col1, col2 = st.columns(2)
             with col1:
                 if search_mode in ["All", "Metadata Only"]:
-                    st.markdown(f"📄 **{len(metadata_matches)} sources** match in metadata")
+                    st.markdown(f"**{len(metadata_matches)} sources** match in metadata")
             with col2:
                 if search_mode in ["All", "Content Only"]:
-                    st.markdown(f"🔍 **{len(content_matches)} graph entities** match your search")
+                    st.markdown(f"**{len(content_matches)} graph entities** match your search")
             
             # Show content matches in an expander
             if content_matches:
-                with st.expander(f"🔍 View {len(content_matches)} Matching Graph Entities", expanded=True):
+                with st.expander(f"View {len(content_matches)} Matching Graph Entities", expanded=True):
                     st.markdown("**Found in knowledge graph:**")
                     for i, match in enumerate(content_matches[:10], 1):  # Limit to top 10
                         st.markdown(f"**{i}. {match['entity_name']}** ({match['entity_type']})")
@@ -1236,13 +1297,13 @@ with tab3:
             if total_pages > 1:
                 col1, col2, col3 = st.columns([1, 2, 1])
                 with col1:
-                    if st.button("⬅️ Previous", disabled=(st.session_state.sources_page == 1)):
+                    if st.button("Previous", disabled=(st.session_state.sources_page == 1)):
                         st.session_state.sources_page -= 1
                         st.rerun()
                 with col2:
                     st.markdown(f"<div style='text-align: center; padding-top: 5px;'>Page {st.session_state.sources_page} of {total_pages}</div>", unsafe_allow_html=True)
                 with col3:
-                    if st.button("Next ➡️", disabled=(st.session_state.sources_page == total_pages)):
+                    if st.button("Next", disabled=(st.session_state.sources_page == total_pages)):
                         st.session_state.sources_page += 1
                         st.rerun()
             
@@ -1270,29 +1331,27 @@ with tab3:
                     col1, col2 = st.columns([4, 1])
                     with col1:
                         title_display = f"### {i}. {source['title']}"
-                        if is_metadata_match:
-                            title_display += " 🎯"  # Badge for direct match
                         st.markdown(title_display)
                     with col2:
                         if source['url'] and source['url'].startswith('http'):
-                            st.link_button("🔗 View Source", source['url'], use_container_width=True)
+                            st.link_button("View Source", source['url'], use_container_width=True)
                         else:
                             st.caption("No URL available")
                     
                     # Show match indicator
                     if is_metadata_match:
-                        st.caption("🎯 Direct match in source metadata")
+                        st.caption("Direct match in source metadata")
                     
                     # Metadata
                     meta_col1, meta_col2 = st.columns(2)
                     with meta_col1:
-                        st.markdown(f"**📋 Type:** {source['auth_type']}")
+                        st.markdown(f"**Type:** {source['auth_type']}")
                     with meta_col2:
-                        st.markdown(f"**📝 Citation:** {source['cite']}")
+                        st.markdown(f"**Citation:** {source['cite']}")
                     
                     # URL (if not already shown as button)
                     if source['url']:
-                        with st.expander("🔗 Full URL"):
+                        with st.expander("Full URL"):
                             st.code(source['url'], language=None)
                     
                     st.markdown("---")
@@ -1301,23 +1360,23 @@ with tab3:
             if total_pages > 1:
                 col1, col2, col3 = st.columns([1, 2, 1])
                 with col1:
-                    if st.button("⬅️ Prev", disabled=(st.session_state.sources_page == 1), key="prev_bottom"):
+                    if st.button("Previous", disabled=(st.session_state.sources_page == 1), key="prev_bottom"):
                         st.session_state.sources_page -= 1
                         st.rerun()
                 with col2:
                     st.markdown(f"<div style='text-align: center; padding-top: 5px;'>Page {st.session_state.sources_page} of {total_pages}</div>", unsafe_allow_html=True)
                 with col3:
-                    if st.button("Next ➡️", disabled=(st.session_state.sources_page == total_pages), key="next_bottom"):
+                    if st.button("Next", disabled=(st.session_state.sources_page == total_pages), key="next_bottom"):
                         st.session_state.sources_page += 1
                         st.rerun()
         else:
             st.info("No sources match your search criteria. Try different keywords or filters.")
     else:
-        st.warning("⚠️ No data sources available in the database.")
+        st.warning("No data sources available in the database.")
 
 # Sidebar with information and settings (outside tabs)
 with st.sidebar:
-    st.header("ℹ️ About")
+    st.header("About")
     st.markdown("""
     This assistant uses a graph database to answer questions about:
     - **HRA Types**: QSEHRA, ICHRA, etc.
@@ -1325,19 +1384,19 @@ with st.sidebar:
     - **Relationships**: Administration, Eligibility, Funding
     
     ### Features
-    ✅ Smart automatic fallback  
-    ✅ Optimized for token efficiency  
-    ✅ Enhanced Cypher generation  
-    ✅ Cached for fast responses
+    - Smart automatic fallback  
+    - Optimized for token efficiency  
+    - Enhanced Cypher generation  
+    - Cached for fast responses
     """)
     
     # Data Sources Section
-    st.header("📚 Data Sources")
+    st.header("Data Sources")
     with st.spinner("Loading sources..."):
         data_sources = get_data_sources(conn)
     
     if data_sources:
-        st.metric("Total Sources", len(data_sources), "📄")
+        st.metric("Total Sources", len(data_sources))
         
         # Show preview of first 3 sources
         st.markdown("**Recent Sources:**")
@@ -1345,11 +1404,11 @@ with st.sidebar:
             st.caption(f"• {source['title'][:40]}...")
         
         # Button to view all sources
-        st.info("👉 **Click the 'Data Sources' tab** above to search, filter, and explore all sources!")
+        st.info("**Click the 'Data Sources' tab** above to search, filter, and explore all sources!")
     else:
         st.info("No data sources available")
     
-    st.header("📊 Configuration")
+    st.header("Configuration")
     st.info(f"**Active Config:** {qa_chain.get_last_successful_config() or 'None yet'}")
     
     st.markdown("""
@@ -1358,21 +1417,21 @@ with st.sidebar:
     - Minimal (1 result, ~15 tokens)
     - Ultra-Minimal (1 result, ~5 tokens)
     
-    ⚠️ **Note**: Ultra-optimized for 4MB limit
+    **Note**: Ultra-optimized for 4MB limit
     """)
     
-    st.info("💡 **Tip**: For complex questions, try breaking them into smaller, simpler queries.")
+    st.info("**Tip**: For complex questions, try breaking them into smaller, simpler queries.")
     
-    st.header("⚙️ Settings")
+    st.header("Settings")
     verbose_mode = st.toggle(
         "Show Chain of Thought",
         value=False,
-        help="Enable to see technical details. ⚠️ This slows down responses slightly."
+        help="Enable to see technical details. This slows down responses slightly."
     )
     
     # Show evaluation status
     if not EVALUATION_AVAILABLE:
-        st.warning("⚠️ Evaluation dependencies not installed. Run: `pip install presidio-analyzer presidio-anonymizer textstat && python -m spacy download en_core_web_sm`")
+        st.warning("Evaluation dependencies not installed. Run: `pip install presidio-analyzer presidio-anonymizer textstat && python -m spacy download en_core_web_sm`")
         enable_evaluation = False
     else:
         enable_evaluation = st.toggle(
@@ -1395,340 +1454,368 @@ def cached_query(question, capture_verbose):
 # Main chat interface (in tab1)
 with tab1:
     # Helper for complex queries
-    st.info("💡 **For best results**: Ask simple, focused questions. Break complex queries into multiple smaller questions.")
+    st.info("**For best results**: Ask simple, focused questions. Break complex queries into multiple smaller questions.")
     
-    # Main input
-    user_input = st.text_input("Enter your question:", placeholder="e.g., What is QSEHRA?")
+    # Main input - store in session state to persist across reruns
+    user_input = st.text_input("Enter your question:", placeholder="e.g., What is QSEHRA?", key="question_input")
 
-    # Example questions with clickable buttons
-    with st.expander("💡 Example Questions"):
-        example_questions = [
-            "What is QSEHRA?",
-            "How does the IRS administrate QSEHRA?",
-            "What is ICHRA, who is eligible for it, and who funds it?",
-            "Tell me everything about QSEHRA",
-            "Which HRA types are funded by employers?"
-        ]
-        
-        st.markdown("Click any question to use it:")
-        for i, example in enumerate(example_questions):
-            if st.button(example, key=f"example_{i}"):
-                user_input = example
-                st.rerun()
+    # Example questions
+    with st.expander("Example Questions"):
+        st.markdown("""
+        **Sample questions you can ask:**
+        - What is QSEHRA?
+        - How does the IRS administrate QSEHRA?
+        - What is ICHRA, who is eligible for it, and who funds it?
+        - Tell me everything about QSEHRA
+        - Which HRA types are funded by employers?
+        """)
 
     # Query button and processing
-    if st.button("Send", type="primary") and user_input:
-        import time
-        
-        # Create placeholders for live updates
-        timer_placeholder = st.empty()
-        status_placeholder = st.empty()
-        
-        try:
-            start_time = time.time()
+    send_clicked = st.button("Send", type="primary")
+    
+    # Check if button clicked and input has content
+    if send_clicked:
+        if not user_input or not user_input.strip():
+            st.warning("Please enter a question before clicking Send.")
+        else:
+            import time
             
-            # Show initial timer
-            timer_placeholder.info("⏱️ Processing... 0.0s")
+            # Store the current question
+            current_question = user_input.strip()
             
-            # Run QA chain with smart fallback (with caching)
-            with status_placeholder:
-                with st.spinner("🔄 Generating Cypher query and fetching results..."):
-                    response, config_used, steps_output = cached_query(user_input, verbose_mode)
+            # Create placeholders for live updates
+            timer_placeholder = st.empty()
+            status_placeholder = st.empty()
             
-            end_time = time.time()
-            elapsed = end_time - start_time
+            try:
+                start_time = time.time()
+                
+                # Show initial timer
+                timer_placeholder.info("Processing... 0.0s")
+                
+                # Run QA chain with smart fallback (with caching)
+                with status_placeholder:
+                    with st.spinner("Generating Cypher query and fetching results..."):
+                        response, config_used, steps_output = cached_query(current_question, verbose_mode)
+                
+                end_time = time.time()
+                elapsed = end_time - start_time
+                
+                # Clear the timer placeholder
+                timer_placeholder.empty()
+                status_placeholder.empty()
+                
+                # ========================================================================
+                # EVALUATE RESPONSE (if enabled)
+                # ========================================================================
+                eval_metrics = None
+                if enable_evaluation:
+                    try:
+                        # Extract response text
+                        response_text = response['result'] if isinstance(response, dict) and 'result' in response else str(response)
+                        
+                        # Evaluate the response
+                        eval_metrics = evaluate_response(
+                            question=current_question,
+                            response=response_text,
+                            context=""  # Could add Cypher query context if available
+                        )
+                    except Exception as eval_error:
+                        st.warning(f"Evaluation failed: {str(eval_error)}")
+                        eval_metrics = None
             
-            # Clear the timer placeholder
-            timer_placeholder.empty()
-            status_placeholder.empty()
+                # Add to history
+                st.session_state.query_history.append({
+                    'question': current_question,
+                    'config': config_used,
+                    'time': elapsed
+                })
             
-            # ========================================================================
-            # EVALUATE RESPONSE (if enabled)
-            # ========================================================================
-            eval_metrics = None
-            if enable_evaluation:
-                try:
-                    # Extract response text
-                    response_text = response['result'] if isinstance(response, dict) and 'result' in response else str(response)
-                    
-                    # Evaluate the response
-                    eval_metrics = evaluate_response(
-                        question=user_input,
-                        response=response_text,
-                        context=""  # Could add Cypher query context if available
-                    )
-                except Exception as eval_error:
-                    st.warning(f"⚠️ Evaluation failed: {str(eval_error)}")
-                    eval_metrics = None
+                # Display timing prominently at the top
+                st.markdown("---")
             
-            # Add to history
-            st.session_state.query_history.append({
-                'question': user_input,
-                'config': config_used,
-                'time': elapsed
-            })
-        
-            # Display timing prominently at the top
-            st.markdown("---")
-        
-            # Create a prominent metrics row
-            metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
-        
-            with metric_col1:
-                # Performance badge
-                if elapsed < 2:
-                    perf_icon = "⚡"
-                    perf_label = "Fast"
-                    perf_delta = f"-{(2-elapsed):.1f}s vs target"
-                    perf_delta_color = "normal"
-                elif elapsed < 5:
-                    perf_icon = "🚀"
-                    perf_label = "Good"
-                    perf_delta = f"+{(elapsed-2):.1f}s vs fast"
-                    perf_delta_color = "off"
-                else:
-                    perf_icon = "🐌"
-                    perf_label = "Slow"
-                    perf_delta = f"+{(elapsed-5):.1f}s vs target"
-                    perf_delta_color = "inverse"
+                # Create a prominent metrics row
+                metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
             
-                st.metric(
-                    label=f"{perf_icon} Performance",
-                    value=perf_label,
-                    delta=perf_delta,
-                    delta_color=perf_delta_color
-                )
-        
-            with metric_col2:
-                # Elapsed time metric
-                st.metric(
-                    label="⏱️ Response Time",
-                    value=f"{elapsed:.2f}s",
-                    delta=f"{int(elapsed * 1000)}ms total"
-                )
-        
-            with metric_col3:
-                # Configuration used
-                if config_used:
-                    if config_used == "Standard":
-                        badge_color = "🟢"
-                        quality = "Best"
-                    elif config_used == "Minimal":
-                        badge_color = "🟡"
-                        quality = "Good"
+                with metric_col1:
+                    # Performance badge
+                    if elapsed < 2:
+                        perf_label = "Fast"
+                        perf_delta = f"-{(2-elapsed):.1f}s vs target"
+                        perf_delta_color = "normal"
+                    elif elapsed < 5:
+                        perf_label = "Good"
+                        perf_delta = f"+{(elapsed-2):.1f}s vs fast"
+                        perf_delta_color = "off"
                     else:
-                        badge_color = "🟠"
-                        quality = "Efficient"
+                        perf_label = "Slow"
+                        perf_delta = f"+{(elapsed-5):.1f}s vs target"
+                        perf_delta_color = "inverse"
                 
                     st.metric(
-                        label=f"{badge_color} Configuration",
-                        value=config_used,
-                        delta=f"{quality} quality"
+                        label="Performance",
+                        value=perf_label,
+                        delta=perf_delta,
+                        delta_color=perf_delta_color
                     )
-        
-            with metric_col4:
-                # Token efficiency estimate
-                token_estimate = {
-                    "Standard": "~20 tokens",
-                    "Minimal": "~15 tokens",
-                    "Ultra-Minimal": "~5 tokens"
-                }.get(config_used, "Unknown")
             
-                st.metric(
-                    label="📊 Token Usage",
-                    value=token_estimate,
-                    delta="Optimized"
-                )
-        
-            st.markdown("---")
-        
-            # Display response
-            st.subheader("Response:")
+                with metric_col2:
+                    # Elapsed time metric
+                    st.metric(
+                        label="Response Time",
+                        value=f"{elapsed:.2f}s",
+                        delta=f"{int(elapsed * 1000)}ms total"
+                    )
             
-            # Extract response text
-            if isinstance(response, dict) and 'result' in response:
-                response_text = response['result']
-            elif isinstance(response, dict):
-                response_text = str(response)
-            else:
-                response_text = response
-            
-            # Check for warning indicators
-            if isinstance(response, dict) and 'warning' in response:
-                st.warning(f"⚠️ {response['warning']}")
-            
-            # Check if response indicates no results
-            no_data_indicators = [
-                "i don't know",
-                "no information",
-                "couldn't find",
-                "no data",
-                "no results",
-                "unable to answer"
-            ]
-            
-            if any(indicator in response_text.lower() for indicator in no_data_indicators):
-                st.info("💡 **Tip**: The query may not have found matching data. Try:\n- Rephrasing your question\n- Using different keywords\n- Checking the Graph Visualization tab")
-            
-            # Display the response
-            st.markdown(response_text)
-        
-            # ====================================================================
-            # DISPLAY EVALUATION METRICS (if enabled)
-            # ====================================================================
-            if enable_evaluation and eval_metrics:
-                # Overall quality badge
-                grade = eval_metrics['quality_grade']
-                overall_score = eval_metrics['overall_quality_score']
-                
-                # Color coding for grades
-                grade_colors = {
-                    "A": "🟢",
-                    "B": "🟡", 
-                    "C": "🟠",
-                    "D": "🔴",
-                    "F": "⚫"
-                }
-                grade_icon = grade_colors.get(grade, "⚪")
-                
-                # Compact quality badge
-                quality_score_pct = int(overall_score * 100)
-                pii_status = "✅" if eval_metrics['pii_score'] == 1.0 else "⚠️"
-                safety_status = "✅" if eval_metrics['harmfulness_score'] == 1.0 else "⚠️"
-                relevancy_pct = int(eval_metrics['relevancy_score'] * 100)
-                
-                # Display in a compact single line
-                st.caption(f"{grade_icon} **Quality: Grade {grade}** ({quality_score_pct}%) | {pii_status} Privacy | {safety_status} Safety | 🎯 Relevancy: {relevancy_pct}%")
-                
-                # Detailed metrics in expander (collapsed by default)
-                with st.expander("📊 View Detailed Evaluation", expanded=False):
-                    # Key metrics
-                    col1, col2, col3 = st.columns(3)
-                    with col1:
-                        st.markdown("**📈 Quality**")
-                        st.write(f"Overall: {quality_score_pct}%")
-                        st.write(f"Relevancy: {int(eval_metrics['relevancy_score']*100)}%")
-                        st.write(f"Readability: {int(eval_metrics['readability_score']*100)}%")
+                with metric_col3:
+                    # Configuration used
+                    if config_used:
+                        if config_used == "Standard":
+                            quality = "Best"
+                        elif config_used == "Minimal":
+                            quality = "Good"
+                        else:
+                            quality = "Efficient"
                     
-                    with col2:
-                        st.markdown("**🛡️ Safety**")
-                        pii_msg = "No PII detected" if eval_metrics['pii_count'] == 0 else f"{eval_metrics['pii_count']} PII found"
-                        st.write(pii_msg)
-                        harm_msg = "No harmful content" if eval_metrics['harmful_count'] == 0 else f"{eval_metrics['harmful_count']} flags"
-                        st.write(harm_msg)
-                    
-                    with col3:
-                        st.markdown("**📝 Content**")
-                        st.write(f"{eval_metrics['word_count']} words")
-                        st.write(f"Structure: {'✓' if eval_metrics['has_proper_structure'] else '✗'}")
-        
-            # Display chain of thought in expander (only if verbose mode enabled)
-            if verbose_mode and steps_output:
-                with st.expander("🔍 Chain of Thought (Technical Details)", expanded=False):
-                    st.text(steps_output)
-            elif not verbose_mode:
-                st.info("💡 Enable 'Show Chain of Thought' in the sidebar to see technical details")
+                        st.metric(
+                            label="Configuration",
+                            value=config_used,
+                            delta=f"{quality} quality"
+                        )
             
-        except Exception as e:
-            timer_placeholder.empty()
-            status_placeholder.empty()
+                with metric_col4:
+                    # Token efficiency estimate
+                    token_estimate = {
+                        "Standard": "~20 tokens",
+                        "Minimal": "~15 tokens",
+                        "Ultra-Minimal": "~5 tokens"
+                    }.get(config_used, "Unknown")
+                
+                    st.metric(
+                        label="Token Usage",
+                        value=token_estimate,
+                        delta="Optimized"
+                    )
             
-            error_msg = str(e)
+                st.markdown("---")
             
-            # Categorize and provide helpful error messages
-            if "context limit" in error_msg.lower() or "token limit" in error_msg.lower() or "request size" in error_msg.lower():
-                st.error("🚫 **Context Limit Exceeded**")
-                st.markdown("""
-                **Your question is too complex for the current configuration.**
+                # Display response
+                st.subheader("Response:")
                 
-                **Solutions:**
-                1. ✂️ **Simplify your question** - Break it into smaller parts
-                2. 🔍 **Ask about one thing at a time** - Focus on a single HRA type or relationship
-                3. 📊 **Use Graph Visualization** - Switch to the Graph tab for visual exploration
+                # Extract response text
+                if isinstance(response, dict) and 'result' in response:
+                    response_text = response['result']
+                elif isinstance(response, dict):
+                    response_text = str(response)
+                else:
+                    response_text = response
                 
-                **Example:**
-                - ❌ Too complex: "Tell me everything about all HRA types and their relationships"
-                - ✅ Better: "What is QSEHRA?"
-                """)
+                # Check for warning indicators
+                if isinstance(response, dict) and 'warning' in response:
+                    st.warning(f"{response['warning']}")
                 
-                with st.expander("🔍 See Technical Details"):
-                    st.code(error_msg)
-                    
-            elif "database" in error_msg.lower() or "lock" in error_msg.lower():
-                st.error("🔒 **Database Error**")
-                st.markdown("""
-                **The database is currently unavailable or locked.**
+                # Check if response indicates no results
+                no_data_indicators = [
+                    "i don't know",
+                    "no information",
+                    "couldn't find",
+                    "no data",
+                    "no results",
+                    "unable to answer"
+                ]
                 
-                **Solutions:**
-                1. 🔄 **Refresh the page** - This may release the lock
-                2. 🚪 **Close other connections** - Close any other apps using the database
-                3. ⏰ **Wait a moment** - The lock may release automatically
+                if any(indicator in response_text.lower() for indicator in no_data_indicators):
+                    st.info("**Tip**: The query may not have found matching data. Try:\n- Rephrasing your question\n- Using different keywords\n- Checking the Graph Visualization tab")
                 
-                **If the problem persists**, the database file may be corrupted or inaccessible.
-                """)
-                
-                with st.expander("🔍 See Technical Details"):
-                    st.code(error_msg)
-                    
-            elif "connection" in error_msg.lower() or "timeout" in error_msg.lower() or "network" in error_msg.lower():
-                st.error("🔌 **Connection Error**")
-                st.markdown("""
-                **Unable to reach the LLM endpoint.**
-                
-                **Solutions:**
-                1. 🌐 **Check internet connection**
-                2. 🔑 **Verify API credentials** - Ensure Databricks endpoint is configured
-                3. ⏰ **Try again** - The service may be temporarily unavailable
-                4. 📊 **Use Graph Visualization** - Explore data without querying the LLM
-                """)
-                
-                with st.expander("🔍 See Technical Details"):
-                    st.code(error_msg)
-                    
-            elif "no results" in error_msg.lower() or "empty" in error_msg.lower():
-                st.warning("🔍 **No Results Found**")
-                st.markdown("""
-                **The query didn't return any data.**
-                
-                **Possible reasons:**
-                1. 📭 **No matching data** - The graph doesn't contain information about your question
-                2. ❓ **Question mismatch** - Try rephrasing your question
-                3. 🔄 **Try different terms** - Use different keywords or concepts
-                
-                **Suggestions:**
-                - Check the Graph Visualization tab to see available data
-                - Try example questions from the dropdown above
-                """)
-                
-                with st.expander("🔍 See Technical Details"):
-                    st.code(error_msg)
-                    
-            else:
-                st.error("❌ **An Error Occurred**")
-                st.markdown("""
-                **Something went wrong processing your question.**
-                
-                **Solutions:**
-                1. 🔄 **Try again** - The error may be temporary
-                2. ✂️ **Simplify your question** - Use shorter, clearer phrasing
-                3. 💡 **Enable 'Show Chain of Thought'** - See what's happening behind the scenes
-                4. 📊 **Use Graph Visualization** - Explore the data visually
-                """)
-                
-                with st.expander("🔍 See Technical Details"):
-                    st.code(error_msg)
+                # Display the response
+                st.markdown(response_text)
             
-            # Add helpful footer
-            st.info("💡 **Need help?** Enable 'Show Chain of Thought' in the sidebar for more debugging information.")
+                # ====================================================================
+                # DISPLAY EVALUATION METRICS (if enabled)
+                # ====================================================================
+                if enable_evaluation and eval_metrics:
+                    # Overall quality badge
+                    grade = eval_metrics['quality_grade']
+                    overall_score = eval_metrics['overall_quality_score']
+                    
+                    # Compact quality badge
+                    quality_score_pct = int(overall_score * 100)
+                    pii_status = "Pass" if eval_metrics['pii_score'] == 1.0 else "Warning"
+                    safety_status = "Pass" if eval_metrics['harmfulness_score'] == 1.0 else "Warning"
+                    relevancy_pct = int(eval_metrics['relevancy_score'] * 100)
+                    
+                    # Display in a compact single line
+                    st.caption(f"**Quality: Grade {grade}** ({quality_score_pct}%) | Privacy: {pii_status} | Safety: {safety_status} | Relevancy: {relevancy_pct}%")
+                    
+                    # Detailed metrics in expander (collapsed by default)
+                    with st.expander("View Detailed Evaluation", expanded=False):
+                        # Key metrics
+                        col1, col2, col3 = st.columns(3)
+                        with col1:
+                            st.markdown("**Quality**")
+                            st.write(f"Overall: {quality_score_pct}%")
+                            st.write(f"Relevancy: {int(eval_metrics['relevancy_score']*100)}%")
+                            st.write(f"Readability: {int(eval_metrics['readability_score']*100)}%")
+                        
+                        with col2:
+                            st.markdown("**Safety**")
+                            pii_msg = "No PII detected" if eval_metrics['pii_count'] == 0 else f"{eval_metrics['pii_count']} PII found"
+                            st.write(pii_msg)
+                            harm_msg = "No harmful content" if eval_metrics['harmful_count'] == 0 else f"{eval_metrics['harmful_count']} flags"
+                            st.write(harm_msg)
+                        
+                        with col3:
+                            st.markdown("**Content**")
+                            st.write(f"{eval_metrics['word_count']} words")
+                            st.write(f"Structure: {'Pass' if eval_metrics['has_proper_structure'] else 'Fail'}")
+                        
+                        # Detailed breakdown sections
+                        st.markdown("---")
+                        
+                        # PII Details
+                        st.markdown("**PII Detection Details:**")
+                        if eval_metrics['pii_count'] > 0:
+                            st.warning(f"Found {eval_metrics['pii_count']} potential PII instance(s)")
+                            
+                            # Show actual PII instances
+                            if eval_metrics.get('pii_instances'):
+                                st.write("**PII Found:**")
+                                for idx, pii in enumerate(eval_metrics['pii_instances'], 1):
+                                    confidence_pct = int(pii.get('score', 0) * 100)
+                                    st.write(f"{idx}. **{pii['type']}**: `{pii['text']}` (confidence: {confidence_pct}%)")
+                            
+                            st.error("**Security Warning**: PII should be removed or anonymized before sharing this response.")
+                        else:
+                            st.success("No PII detected - response is safe to share")
+                        
+                        st.markdown("---")
+                        
+                        # Relevancy Details
+                        st.markdown("**Relevancy Score Details:**")
+                        relevancy_pct_detail = int(eval_metrics['relevancy_score']*100)
+                        keyword_overlap = eval_metrics.get('keyword_overlap', 0)
+                        question_keywords = eval_metrics.get('question_keywords', 0)
+                        
+                        st.write(f"**Score:** {relevancy_pct_detail}%")
+                        st.write(f"**Keyword Match:** {keyword_overlap} out of {question_keywords} question keywords found in response")
+                        
+                        if relevancy_pct_detail >= 80:
+                            st.success("Excellent relevancy - response strongly matches the question")
+                        elif relevancy_pct_detail >= 60:
+                            st.info("Good relevancy - response addresses most of the question")
+                        elif relevancy_pct_detail >= 40:
+                            st.warning("Moderate relevancy - response partially addresses the question")
+                        else:
+                            st.error("Low relevancy - response may not fully address the question")
+                        
+                        st.caption("Relevancy is calculated by comparing keywords between the question and response.")
+            
+                # Display chain of thought in expander (only if verbose mode enabled)
+                if verbose_mode and steps_output:
+                    with st.expander("Chain of Thought (Technical Details)", expanded=False):
+                        st.text(steps_output)
+                elif not verbose_mode:
+                    st.info("Enable 'Show Chain of Thought' in the sidebar to see technical details")
+                
+            except Exception as e:
+                timer_placeholder.empty()
+                status_placeholder.empty()
+                
+                error_msg = str(e)
+                
+                # Categorize and provide helpful error messages
+                if "context limit" in error_msg.lower() or "token limit" in error_msg.lower() or "request size" in error_msg.lower():
+                    st.error("**Context Limit Exceeded**")
+                    st.markdown("""
+                    **Your question is too complex for the current configuration.**
+                    
+                    **Solutions:**
+                    1. **Simplify your question** - Break it into smaller parts
+                    2. **Ask about one thing at a time** - Focus on a single HRA type or relationship
+                    3. **Use Graph Visualization** - Switch to the Graph tab for visual exploration
+                    
+                    **Example:**
+                    - Too complex: "Tell me everything about all HRA types and their relationships"
+                    - Better: "What is QSEHRA?"
+                    """)
+                    
+                    with st.expander("See Technical Details"):
+                        st.code(error_msg)
+                        
+                elif "database" in error_msg.lower() or "lock" in error_msg.lower():
+                    st.error("**Database Error**")
+                    st.markdown("""
+                    **The database is currently unavailable or locked.**
+                    
+                    **Solutions:**
+                    1. **Refresh the page** - This may release the lock
+                    2. **Close other connections** - Close any other apps using the database
+                    3. **Wait a moment** - The lock may release automatically
+                    
+                    **If the problem persists**, the database file may be corrupted or inaccessible.
+                    """)
+                    
+                    with st.expander("See Technical Details"):
+                        st.code(error_msg)
+                        
+                elif "connection" in error_msg.lower() or "timeout" in error_msg.lower() or "network" in error_msg.lower():
+                    st.error("**Connection Error**")
+                    st.markdown("""
+                    **Unable to reach the LLM endpoint.**
+                    
+                    **Solutions:**
+                    1. **Check internet connection**
+                    2. **Verify API credentials** - Ensure Databricks endpoint is configured
+                    3. **Try again** - The service may be temporarily unavailable
+                    4. **Use Graph Visualization** - Explore data without querying the LLM
+                    """)
+                    
+                    with st.expander("See Technical Details"):
+                        st.code(error_msg)
+                        
+                elif "no results" in error_msg.lower() or "empty" in error_msg.lower():
+                    st.warning("**No Results Found**")
+                    st.markdown("""
+                    **The query didn't return any data.**
+                    
+                    **Possible reasons:**
+                    1. **No matching data** - The graph doesn't contain information about your question
+                    2. **Question mismatch** - Try rephrasing your question
+                    3. **Try different terms** - Use different keywords or concepts
+                    
+                    **Suggestions:**
+                    - Check the Graph Visualization tab to see available data
+                    - Try example questions from the dropdown above
+                    """)
+                    
+                    with st.expander("See Technical Details"):
+                        st.code(error_msg)
+                        
+                else:
+                    st.error("**An Error Occurred**")
+                    st.markdown("""
+                    **Something went wrong processing your question.**
+                    
+                    **Solutions:**
+                    1. **Try again** - The error may be temporary
+                    2. **Simplify your question** - Use shorter, clearer phrasing
+                    3. **Enable 'Show Chain of Thought'** - See what's happening behind the scenes
+                    4. **Use Graph Visualization** - Explore the data visually
+                    """)
+                    
+                    with st.expander("See Technical Details"):
+                        st.code(error_msg)
+                
+                # Add helpful footer
+                st.info("**Need help?** Enable 'Show Chain of Thought' in the sidebar for more debugging information.")
 
 # Show query history in sidebar
 if st.session_state.query_history:
     with st.sidebar:
-        st.header("📜 Query History")
+        st.header("Query History")
         recent = st.session_state.query_history[-5:][::-1]  # Last 5, reversed
         for i, entry in enumerate(recent):
-            badge = {"Standard": "🟢", "Minimal": "🟡", "Ultra-Minimal": "🟠"}.get(entry['config'], "⚪")
-            st.caption(f"{badge} {entry['question'][:30]}... ({entry['time']:.1f}s)")
+            st.caption(f"[{entry['config']}] {entry['question'][:30]}... ({entry['time']:.1f}s)")
         
         if st.button("Clear History", use_container_width=True):
             st.session_state.query_history = []
@@ -1745,7 +1832,7 @@ st.markdown(
     f"""
     <div style='text-align: center; color: gray;'>
     <small>Powered by Kuzu Graph Database + Databricks LLM | Smart Fallback + Caching Enabled</small><br>
-    <small>📚 Built from {source_count} authoritative sources | See sidebar for details</small>
+    <small>Built from {source_count} authoritative sources | See sidebar for details</small>
     </div>
     """,
     unsafe_allow_html=True
