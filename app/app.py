@@ -55,6 +55,7 @@ def get_database_and_graph():
     Initialize database connection once and cache it.
     This prevents recreating the connection on every Streamlit rerun.
     """
+    # Database is in ../data/ relative to app location
     db = kuzu.Database("AIPolicyAssistant_database.kuzu")
     conn = kuzu.Connection(db)
     graph = KuzuGraph(db, allow_dangerous_requests=True)
@@ -489,17 +490,21 @@ ULTRA_MINIMAL_SYSTEM_MESSAGE = '''Cypher query.'''
 
 
 @st.cache_resource(show_spinner="Loading AI models...")
-def get_qa_chains(_graph):
+def get_qa_chains(_graph, model_endpoint: str = "databricks-gpt-oss-120b"):
     """
     Initialize all three QA chain configurations once and cache them.
     The _graph parameter uses underscore prefix to tell Streamlit not to hash it.
     This significantly speeds up app performance by avoiding recreation on every rerun.
+    
+    Args:
+        _graph: KuzuGraph instance
+        model_endpoint: Databricks model endpoint to use
     """
     # ============================================================================
     # CONFIGURATION 1: STANDARD (Best quality, optimized for token efficiency)
     # ============================================================================
     llm_standard = ChatDatabricks(
-    endpoint="databricks-gpt-oss-120b",
+    endpoint=model_endpoint,
     temperature=0.1,
         system_message=STANDARD_SYSTEM_MESSAGE
     )
@@ -518,7 +523,7 @@ def get_qa_chains(_graph):
     # CONFIGURATION 2: MINIMAL (Reduced tokens, good quality)
     # ============================================================================
     llm_minimal = ChatDatabricks(
-        endpoint="databricks-gpt-oss-120b",
+        endpoint=model_endpoint,
         temperature=0.1,
         system_message=MINIMAL_SYSTEM_MESSAGE
     )
@@ -537,7 +542,7 @@ def get_qa_chains(_graph):
     # CONFIGURATION 3: ULTRA-MINIMAL (Maximum token efficiency)
     # ============================================================================
     llm_ultra = ChatDatabricks(
-        endpoint="databricks-gpt-oss-120b",
+        endpoint=model_endpoint,
         temperature=0.1,
         system_message=ULTRA_MINIMAL_SYSTEM_MESSAGE
     )
@@ -553,8 +558,28 @@ def get_qa_chains(_graph):
     
     return qa_chain_standard, qa_chain_minimal, qa_chain_ultra
 
-# Get cached chains
-qa_chain_standard, qa_chain_minimal, qa_chain_ultra = get_qa_chains(graph)
+# ============================================================================
+# MODEL CONFIGURATION
+# ============================================================================
+
+# Available Databricks model endpoints
+AVAILABLE_MODELS = {
+    "Claude Sonnet 4.5": "databricks-claude-sonnet-4-5",
+    "GPT OSS 120B": "databricks-gpt-oss-120b",
+    "GPT OSS 20B": "databricks-gpt-oss-20b",
+    "Llama 4 Maverick": "databricks-llama-4-maverick",
+    "Meta Llama 3.3 70B": "databricks-meta-llama-3-3-70b-instruct"
+}
+
+# Initialize session state for model selection
+if 'selected_model' not in st.session_state:
+    st.session_state.selected_model = "GPT OSS 120B"  # Default model
+
+# Get cached chains with selected model
+qa_chain_standard, qa_chain_minimal, qa_chain_ultra = get_qa_chains(
+    graph, 
+    AVAILABLE_MODELS[st.session_state.selected_model]
+)
 
 
 # ============================================================================
@@ -1422,6 +1447,27 @@ with st.sidebar:
     
     st.info("**Tip**: For complex questions, try breaking them into smaller, simpler queries.")
     
+    st.header("Model Selection")
+    
+    # Model selector dropdown
+    selected_model = st.selectbox(
+        "Choose AI Model",
+        options=list(AVAILABLE_MODELS.keys()),
+        index=list(AVAILABLE_MODELS.keys()).index(st.session_state.selected_model),
+        help="Select which Databricks LLM endpoint to use for answering questions"
+    )
+    
+    # Update session state and clear cache if model changed
+    if selected_model != st.session_state.selected_model:
+        st.session_state.selected_model = selected_model
+        # Clear the cached chains to force reload with new model
+        get_qa_chains.clear()
+        get_smart_chain.clear()
+        st.rerun()
+    
+    # Display current model endpoint
+    st.caption(f"Endpoint: `{AVAILABLE_MODELS[selected_model]}`")
+    
     st.header("Settings")
     verbose_mode = st.toggle(
         "Show Chain of Thought",
@@ -1463,11 +1509,11 @@ with tab1:
     with st.expander("Example Questions"):
         st.markdown("""
         **Sample questions you can ask:**
-        - What is QSEHRA?
-        - How does the IRS administrate QSEHRA?
-        - What is ICHRA, who is eligible for it, and who funds it?
-        - Tell me everything about QSEHRA
-        - Which HRA types are funded by employers?
+        - What is a QSEHRA HRA?
+        - Give an overview on how the IRS administrates a ICHRA HRA.
+        - Give an overview of who eligible for a Limited Purpose HRA.
+        - Give an expanded answer on which HRA types are funded by employers?
+        - Give me details on when should consumers with an individual coverage HRA offer or a QSEHRA enroll in individual health insurance coverage.
         """)
 
     # Query button and processing
