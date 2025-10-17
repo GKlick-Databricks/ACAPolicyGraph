@@ -1,6 +1,0 @@
-streamlit==1.38.0
-langchain_community
-mlflow
-kuzu
-networkx
-plotly
