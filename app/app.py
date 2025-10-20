@@ -1510,9 +1510,9 @@ with tab1:
         st.markdown("""
         **Sample questions you can ask:**
         - What is a Retiree Only  HRA?
+        - Give an expanded answer on which HRA types are funded by employers?
         - Give an overview on how the IRS administrates an ICHRA HRA.
         - Give an overview of who is eligible for a QSEHRA HRA.  
-        - Give an expanded answer on which HRA types are funded by employers?
         - Give me details on when should consumers with an individual coverage HRA offer or a QSEHRA enroll in individual health insurance coverage.
         """)
 
