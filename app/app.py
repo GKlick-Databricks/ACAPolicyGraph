@@ -1503,16 +1503,17 @@ with tab1:
     st.info("**For best results**: Ask simple, focused questions. Break complex queries into multiple smaller questions.")
     
     # Main input - store in session state to persist across reruns
-    user_input = st.text_input("Enter your question:", placeholder="e.g., What is QSEHRA?", key="question_input")
+    user_input = st.text_input("Enter your question:", placeholder="e.g., What is a QSEHRA HRA?", key="question_input")
 
     # Example questions
     with st.expander("Example Questions"):
         st.markdown("""
         **Sample questions you can ask:**
-        - What is a Retiree Only  HRA?
-        - Give an expanded answer on which HRA types are funded by employers?
-        - Give an overview on how the IRS administrates an ICHRA HRA.
+        - What is a QSEHRA HRA?
         - Give an overview of who is eligible for a QSEHRA HRA.  
+        - Give an expanded answer on which HRA types are funded by employers?
+        
+        - Give an overview on how the IRS administrates an ICHRA HRA.
         - Give me details on when should consumers with an individual coverage HRA offer or a QSEHRA enroll in individual health insurance coverage.
         """)
 
