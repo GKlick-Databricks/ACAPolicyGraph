@@ -1,0 +1,8 @@
+0,1
+Traditional Integrated HRA,Classic HRA integrated with group coverage
+ICHRA,HRA integrated with individual coverage or Medicare
+EBHRA,"Excepted benefit HRA, cannot reimburse major medical"
+QSEHRA,Small employer HRA (no group plan allowed)
+Retiree Only HRA,"Retiree only plan, ACA market reforms exempt"
+Limited Purpose HRA,Dental/vision only (often HSA compatible)
+Post Deductible HRA,Pays only after HDHP deductible is met

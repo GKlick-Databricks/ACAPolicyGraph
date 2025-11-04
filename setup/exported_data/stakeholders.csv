@@ -1,0 +1,11 @@
+0,1
+Employer,"Plan sponsor, responsible for funding, design, notices, compliance"
+Employee,Participant eligible for HRA reimbursements
+Dependent,Spouse/child covered under HRA
+Plan Administrator,"Administers claims, substantiation, notices, appeals"
+COBRA Administrator,Handles COBRA notices & premium collection
+Issuer Carrier,Insurance company issuing policies reimbursed by HRAs
+Marketplace,Exchange that determines PTC eligibility / SEPs
+IRS,"Tax enforcement for §§105,106,125,36B,4980H,4980B"
+DOL,"Enforces ERISA, COBRA, market reforms"
+HHS,"Regulates Exchanges, ACA market reforms"
