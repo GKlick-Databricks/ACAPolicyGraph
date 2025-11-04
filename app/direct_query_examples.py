@@ -235,12 +235,8 @@ class DirectKuzuQuery:
     # ========================================================================
     
     def _result_to_dict(self, result):
-        """Convert Kuzu query result to list of dictionaries."""
-        data = []
-        while result.has_next():
-            row = result.get_next()
-            data.append(row)
-        return data
+        """Convert Kuzu query result to list of dictionaries. Optimized with get_all()."""
+        return result.get_all()
     
     def get_schema(self):
         """Get database schema information."""

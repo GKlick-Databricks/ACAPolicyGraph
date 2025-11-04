@@ -53,8 +53,9 @@ EVALUATION_AVAILABLE = PRESIDIO_AVAILABLE and TEXTSTAT_AVAILABLE
 # STREAMLIT PAGE CONFIG
 # ============================================================================
 st.set_page_config(
-    page_title="ACA Policy Assistant (Enhanced)",
-    layout="wide"
+    page_title="ACA Policy Assistant",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 # ============================================================================
@@ -62,10 +63,23 @@ st.set_page_config(
 # ============================================================================
 
 @st.cache_resource(show_spinner="Initializing database connection...")
-def get_database_and_engines():
+def get_database_and_engines(model_name="GPT OSS 20B"):
     """
     Initialize database, direct query engine, and LLM chain.
+    Args:
+        model_name: Name of the model to use (from AVAILABLE_MODELS keys)
     """
+    # Get the endpoint for the selected model
+    model_endpoints = {
+        "Claude Sonnet 4.5": "databricks-claude-sonnet-4-5",
+        "GPT OSS 120B": "databricks-gpt-oss-120b",
+        "GPT OSS 20B": "databricks-gpt-oss-20b",
+        "Llama 4 Maverick": "databricks-llama-4-maverick",
+        "Meta Llama 3.3 70B": "databricks-meta-llama-3-3-70b-instruct"
+    }
+    
+    endpoint = model_endpoints.get(model_name, "databricks-gpt-oss-20b")
+    
     # Database connection
     db = kuzu.Database("AIPolicyAssistant_database.kuzu")
     conn = kuzu.Connection(db)
@@ -75,9 +89,9 @@ def get_database_and_engines():
     direct_engine = DirectKuzuQuery("AIPolicyAssistant_database.kuzu")
     router = RuleBasedQueryRouter(direct_engine)
     
-    # LLM chain (fallback for complex queries)
+    # LLM chain (fallback for complex queries) - uses selected model
     llm = ChatDatabricks(
-        endpoint="databricks-gpt-oss-120b",
+        endpoint=endpoint,
         temperature=0.1
     )
     llm_chain = KuzuQAChain.from_llm(
@@ -90,21 +104,46 @@ def get_database_and_engines():
     
     return db, conn, graph, direct_engine, router, llm_chain
 
-# Initialize everything
-db, conn, graph, direct_engine, router, llm_chain = get_database_and_engines()
+# Note: db and engines will be initialized after session state is set up
 
 # ============================================================================
 # GRAPH VISUALIZATION FUNCTIONS (from original app)
 # ============================================================================
 
 @st.cache_data(ttl=3600, show_spinner=False)
+def get_available_topics(_conn):
+    """
+    Fetch available HRA types and stakeholders from database.
+    Returns tuple of (hra_types, stakeholders).
+    Cached for performance.
+    """
+    try:
+        if _conn is None:
+            return [], []
+        
+        # Get HRA Types
+        hra_query = "MATCH (h:HRATypes) RETURN h.HRAType ORDER BY h.HRAType"
+        hra_result = _conn.execute(hra_query)
+        hra_types = [row[0] for row in hra_result.get_all()]
+        
+        # Get Stakeholders
+        stakeholder_query = "MATCH (s:Stakeholders) RETURN s.StakeholderType ORDER BY s.StakeholderType"
+        stakeholder_result = _conn.execute(stakeholder_query)
+        stakeholders = [row[0] for row in stakeholder_result.get_all()]
+        
+        return hra_types, stakeholders
+        
+    except Exception as e:
+        return [], []
+
+
+@st.cache_data(ttl=3600, show_spinner=False)
 def get_data_sources(_conn):
     """
     Fetch data sources (URLs) from Authority nodes.
     Returns list of source dictionaries with title and URL.
+    Optimized: Use get_all() instead of manual iteration.
     """
-    sources = []
-    
     try:
         if _conn is None:
             return []
@@ -112,20 +151,24 @@ def get_data_sources(_conn):
         # Query Authority nodes for sources
         source_query = """
         MATCH (a:Authority) 
+        WHERE a.URL IS NOT NULL
         RETURN a.Title AS title, a.URL AS url, a.AuthType AS auth_type, a.Cite AS cite
         """
         result = _conn.execute(source_query)
         
-        while result.has_next():
-            row = result.get_next()
-            if row[1]:  # Only add if URL exists
-                sources.append({
-                    'title': row[0] or '26 U.S. Code § 9831 - General exceptions',
-                    'url': row[1],
-                    'auth_type': row[2] or 'N/A',
-                    'cite': row[3] or 'N/A',
-                    'related_entities': []  # Will be populated by search
-                })
+        # Use get_all() for much faster results
+        rows = result.get_all()
+        
+        sources = [
+            {
+                'title': row[0] or '26 U.S. Code § 9831 - General exceptions',
+                'url': row[1],
+                'auth_type': row[2] or 'N/A',
+                'cite': row[3] or 'N/A',
+                'related_entities': []
+            }
+            for row in rows
+        ]
         
         return sources
         
@@ -139,57 +182,48 @@ def search_graph_content(_conn, search_term):
     """
     Search through graph entities (HRA Types, Stakeholders) for relevant content.
     Returns matching entities and their related sources.
+    Optimized: Use regex in query and get_all() for batch processing.
     """
     if not search_term or not _conn:
         return []
     
     results = []
-    search_lower = search_term.lower()
+    search_pattern = f"(?i).*{search_term}.*"
     
     try:
-        # Search HRATypes
+        # Search HRATypes with regex filter in query
         hra_query = """
         MATCH (h:HRATypes)
+        WHERE h.HRAType =~ $pattern OR h.Description =~ $pattern
         RETURN h.HRAType AS name, h.Description AS description, 'HRAType' AS type
         """
-        hra_result = _conn.execute(hra_query)
+        hra_result = _conn.execute(hra_query, {"pattern": search_pattern})
+        hra_rows = hra_result.get_all()
         
-        while hra_result.has_next():
-            row = hra_result.get_next()
-            name = row[0] or ""
-            description = row[1] or ""
-            
-            # Check if search term matches
-            if (search_lower in name.lower() or 
-                search_lower in description.lower()):
-                results.append({
-                    'entity_name': name,
-                    'entity_type': 'HRA Type',
-                    'description': description,
-                    'match_context': _get_match_context(search_term, name, description)
-                })
+        for row in hra_rows:
+            results.append({
+                'entity_name': row[0] or "",
+                'entity_type': 'HRA Type',
+                'description': row[1] or "",
+                'match_context': _get_match_context(search_term, row[0] or "", row[1] or "")
+            })
         
-        # Search Stakeholders
+        # Search Stakeholders with regex filter in query
         stakeholder_query = """
         MATCH (s:Stakeholders)
+        WHERE s.StakeholderType =~ $pattern OR s.Description =~ $pattern
         RETURN s.StakeholderType AS name, s.Description AS description, 'Stakeholder' AS type
         """
-        stakeholder_result = _conn.execute(stakeholder_query)
+        stakeholder_result = _conn.execute(stakeholder_query, {"pattern": search_pattern})
+        stakeholder_rows = stakeholder_result.get_all()
         
-        while stakeholder_result.has_next():
-            row = stakeholder_result.get_next()
-            name = row[0] or ""
-            description = row[1] or ""
-            
-            # Check if search term matches
-            if (search_lower in name.lower() or 
-                search_lower in description.lower()):
-                results.append({
-                    'entity_name': name,
-                    'entity_type': 'Stakeholder',
-                    'description': description,
-                    'match_context': _get_match_context(search_term, name, description)
-                })
+        for row in stakeholder_rows:
+            results.append({
+                'entity_name': row[0] or "",
+                'entity_type': 'Stakeholder',
+                'description': row[1] or "",
+                'match_context': _get_match_context(search_term, row[0] or "", row[1] or "")
+            })
         
         return results
         
@@ -248,80 +282,68 @@ def get_graph_data(_conn):
         if _conn is None:
             st.error("Database connection is not available")
             return [], []
-        # Get all HRATypes nodes
+        # Get all HRATypes nodes (optimized with get_all())
         hra_query = "MATCH (h:HRATypes) RETURN h.HRAType AS name, h.Description AS description"
         hra_result = _conn.execute(hra_query)
-        hra_nodes = []
-        while hra_result.has_next():
-            row = hra_result.get_next()
-            hra_nodes.append({
+        hra_rows = hra_result.get_all()
+        hra_nodes = [
+            {
                 'id': row[0],
                 'label': row[0],
                 'description': row[1],
                 'type': 'HRAType',
-                'color': '#3498db'  # Blue
-            })
+                'color': '#3498db'
+            }
+            for row in hra_rows
+        ]
         
-        # Get all Stakeholders nodes
+        # Get all Stakeholders nodes (optimized with get_all())
         stakeholder_query = "MATCH (s:Stakeholders) RETURN s.StakeholderType AS name, s.Description AS description"
         stakeholder_result = _conn.execute(stakeholder_query)
-        stakeholder_nodes = []
-        while stakeholder_result.has_next():
-            row = stakeholder_result.get_next()
-            stakeholder_nodes.append({
+        stakeholder_rows = stakeholder_result.get_all()
+        stakeholder_nodes = [
+            {
                 'id': row[0],
                 'label': row[0],
                 'description': row[1],
                 'type': 'Stakeholder',
-                'color': '#2ecc71'  # Green
-            })
+                'color': '#2ecc71'
+            }
+            for row in stakeholder_rows
+        ]
         
         # Get all relationships - query each type separately since Kuzu doesn't support type()
         edges = []
         
-        # Query AdministratedBy relationships
+        # Query all relationships at once (optimized - single query with get_all())
         admin_query = """
         MATCH (h:HRATypes)-[r:AdministratedBy]->(s:Stakeholders)
-        RETURN h.HRAType, s.StakeholderType
+        RETURN h.HRAType, s.StakeholderType, 'AdministratedBy' AS rel_type, 'Administration relationship' AS rel_desc
         """
         admin_result = _conn.execute(admin_query)
-        while admin_result.has_next():
-            row = admin_result.get_next()
-            edges.append({
-                'source': row[0],
-                'target': row[1],
-                'relationship': 'AdministratedBy',
-                'description': 'Administration relationship'
-            })
+        admin_rows = admin_result.get_all()
         
-        # Query Eligiblefor relationships
         elig_query = """
         MATCH (h:HRATypes)-[r:Eligiblefor]->(s:Stakeholders)
-        RETURN h.HRAType, s.StakeholderType
+        RETURN h.HRAType, s.StakeholderType, 'Eligiblefor' AS rel_type, 'Eligibility relationship' AS rel_desc
         """
         elig_result = _conn.execute(elig_query)
-        while elig_result.has_next():
-            row = elig_result.get_next()
-            edges.append({
-                'source': row[0],
-                'target': row[1],
-                'relationship': 'Eligiblefor',
-                'description': 'Eligibility relationship'
-            })
+        elig_rows = elig_result.get_all()
         
-        # Query Fundedby relationships
         fund_query = """
         MATCH (h:HRATypes)-[r:Fundedby]->(s:Stakeholders)
-        RETURN h.HRAType, s.StakeholderType
+        RETURN h.HRAType, s.StakeholderType, 'Fundedby' AS rel_type, 'Funding relationship' AS rel_desc
         """
         fund_result = _conn.execute(fund_query)
-        while fund_result.has_next():
-            row = fund_result.get_next()
+        fund_rows = fund_result.get_all()
+        
+        # Build edges from all results
+        for row in admin_rows + elig_rows + fund_rows:
             edges.append({
                 'source': row[0],
                 'target': row[1],
-                'relationship': 'Fundedby',
-                'description': 'Funding relationship'
+                'relationship': row[2],
+                'description': row[3]
             })
         
         # Check if we got any data
@@ -348,9 +370,26 @@ def get_graph_data(_conn):
         return [], []
 
 
-def create_network_graph(nodes, edges):
+@st.cache_data(ttl=3600, show_spinner=False)
+def calculate_graph_layout(node_ids):
+    """
+    Calculate and cache graph layout for performance.
+    Returns positions dict.
+    """
+    G = nx.DiGraph()
+    for node_id in node_ids:
+        G.add_node(node_id)
+    
+    # Calculate layout once and cache it
+    pos = nx.spring_layout(G, k=2, iterations=50, seed=42)
+    return pos
+
+
+def create_network_graph(nodes, edges, highlight_query=None):
     """
     Create an interactive network graph using Plotly.
+    Args:
+        highlight_query: Optional dict with 'hra' and 'relationship' to highlight
     """
     # Create NetworkX graph
     G = nx.DiGraph()
@@ -365,14 +404,47 @@ def create_network_graph(nodes, edges):
                   relationship=edge['relationship'],
                   description=edge['description'])
     
-    # Calculate layout
-    pos = nx.spring_layout(G, k=2, iterations=50, seed=42)
+    # Get cached layout
+    node_ids = tuple([n['id'] for n in nodes])  # tuple for caching
+    pos = calculate_graph_layout(node_ids)
+    
+    # Determine which edges to highlight (deduplicate edges)
+    highlight_edges = set()
+    seen_edges = set()  # Track unique edge combinations
+    
+    if highlight_query:
+        direction = highlight_query.get('direction', 'forward')
+        rel_type = highlight_query.get('relationship')
+        
+        if direction == 'reverse':
+            # Stakeholder -> HRA (reverse direction)
+            stakeholder = highlight_query.get('stakeholder')
+            for i, edge in enumerate(edges):
+                edge_key = (edge['source'], edge['target'], edge['relationship'])
+                if edge['target'] == stakeholder and edge['relationship'] == rel_type:
+                    if edge_key not in seen_edges:
+                        highlight_edges.add(i)
+                        seen_edges.add(edge_key)
+        else:
+            # HRA -> Stakeholder (forward direction)
+            hra = highlight_query.get('hra')
+            for i, edge in enumerate(edges):
+                edge_key = (edge['source'], edge['target'], edge['relationship'])
+                if edge['source'] == hra and edge['relationship'] == rel_type:
+                    if edge_key not in seen_edges:
+                        highlight_edges.add(i)
+                        seen_edges.add(edge_key)
     
     # Create edge traces
     edge_traces = []
-    for edge in edges:
+    for i, edge in enumerate(edges):
         x0, y0 = pos[edge['source']]
         x1, y1 = pos[edge['target']]
+        
+        # Determine if this edge should be highlighted
+        is_highlighted = i in highlight_edges
+        edge_color = '#e74c3c' if is_highlighted else '#95a5a6'
+        edge_width = 4 if is_highlighted else 2
         
         # Create detailed hover text for edges
         edge_hover = f"<b>Relationship:</b> {edge['relationship']}<br>"
@@ -385,7 +457,7 @@ def create_network_graph(nodes, edges):
             x=[x0, x1, None],
             y=[y0, y1, None],
             mode='lines',
-            line=dict(width=2, color='#95a5a6'),
+            line=dict(width=edge_width, color=edge_color),
             hoverinfo='text',
             hovertext=edge_hover,
             showlegend=False,
@@ -409,19 +481,65 @@ def create_network_graph(nodes, edges):
             hoverinfo='skip'
         ))
     
+    # Determine which nodes to highlight (deduplicate)
+    highlight_nodes = set()
+    if highlight_query:
+        direction = highlight_query.get('direction', 'forward')
+        rel_type = highlight_query.get('relationship')
+        
+        if direction == 'reverse':
+            # Stakeholder -> HRA (reverse)
+            stakeholder = highlight_query.get('stakeholder')
+            highlight_nodes.add(stakeholder)
+            
+            # Get unique HRA nodes that this stakeholder connects to
+            unique_sources = set()
+            for edge in edges:
+                if edge['target'] == stakeholder and edge['relationship'] == rel_type:
+                    unique_sources.add(edge['source'])
+            
+            highlight_nodes.update(unique_sources)
+        else:
+            # HRA -> Stakeholder (forward)
+            hra = highlight_query.get('hra')
+            highlight_nodes.add(hra)
+            
+            # Get unique target nodes
+            unique_targets = set()
+            for edge in edges:
+                if edge['source'] == hra and edge['relationship'] == rel_type:
+                    unique_targets.add(edge['target'])
+            
+            highlight_nodes.update(unique_targets)
+    
     # Create node traces (separate for each type)
     node_traces = {}
     for node in nodes:
         node_type = node['type']
-        if node_type not in node_traces:
-            node_traces[node_type] = {
-                'x': [], 'y': [], 'text': [], 'hovertext': [], 'color': node['color']
+        is_highlighted = node['id'] in highlight_nodes
+        
+        # Use different trace for highlighted vs normal
+        trace_key = f"{node_type}_highlighted" if is_highlighted else node_type
+        
+        if trace_key not in node_traces:
+            # Highlighted nodes are larger and have different colors
+            if is_highlighted:
+                color = '#e74c3c' if node['type'] == 'HRAType' else '#f39c12'
+                size = 30
+            else:
+                color = node['color']
+                size = 20
+                
+            node_traces[trace_key] = {
+                'x': [], 'y': [], 'text': [], 'hovertext': [], 
+                'color': color, 'size': size, 'type': node_type,
+                'highlighted': is_highlighted
             }
         
         x, y = pos[node['id']]
-        node_traces[node_type]['x'].append(x)
-        node_traces[node_type]['y'].append(y)
-        node_traces[node_type]['text'].append(node['label'])
+        node_traces[trace_key]['x'].append(x)
+        node_traces[trace_key]['y'].append(y)
+        node_traces[trace_key]['text'].append(node['label'])
         
         # Create detailed hover text for nodes with better formatting
         hover_text = f"<b style='font-size:14px'>{node['label']}</b><br>"
@@ -449,22 +567,28 @@ def create_network_graph(nodes, edges):
             lines.append(' '.join(current_line))
         
         hover_text += '<br>'.join(lines)
-        node_traces[node_type]['hovertext'].append(hover_text)
+        node_traces[trace_key]['hovertext'].append(hover_text)  # Use trace_key instead of node_type
     
     # Create Plotly traces for nodes
     plotly_node_traces = []
-    for node_type, data in node_traces.items():
+    for trace_key, data in node_traces.items():
+        # Set legend name
+        if data.get('highlighted'):
+            legend_name = f"{data['type']} (Highlighted)"
+        else:
+            legend_name = data['type']
+        
         trace = go.Scatter(
             x=data['x'],
             y=data['y'],
             mode='markers+text',
-            name=node_type,
+            name=legend_name,
             text=data['text'],
             textposition='bottom center',
             hovertext=data['hovertext'],
             hoverinfo='text',
             marker=dict(
-                size=20,
+                size=data['size'],
                 color=data['color'],
                 line=dict(width=2, color='white')
             ),
@@ -652,9 +776,11 @@ def evaluate_response(question: str, response: str, context: str = "") -> Dict[s
         if word_count >= 3:  # textstat needs minimum words
             readability = textstat.flesch_reading_ease(response)
             # Scale: 0-100, higher = easier to read
-            # 60-70 = easily understood by 13-15 year olds
-            # 50-60 = fairly difficult to read
-            metrics["readability_score"] = readability / 100  # Normalize to 0-1
+            # Can go negative for very difficult text or >100 for very easy text
+            # Normalize and clamp to 0-1 range
+            normalized = readability / 100
+            metrics["readability_score"] = max(0.0, min(1.0, normalized))  # Clamp to [0, 1]
+            metrics["flesch_raw_score"] = readability  # Store raw score for debugging
         else:
             metrics["readability_score"] = 0.5
     except Exception as e:
@@ -775,7 +901,7 @@ if 'query_stats' not in st.session_state:
 
 # Model selection state
 if 'selected_model' not in st.session_state:
-    st.session_state.selected_model = "GPT OSS 120B"
+    st.session_state.selected_model = "GPT OSS 20B"
 
 # Available models
 AVAILABLE_MODELS = {
@@ -785,6 +911,9 @@ AVAILABLE_MODELS = {
     "Llama 4 Maverick": "databricks-llama-4-maverick",
     "Meta Llama 3.3 70B": "databricks-meta-llama-3-3-70b-instruct"
 }
+
+# Initialize database and engines with selected model
+db, conn, graph, direct_engine, router, llm_chain = get_database_and_engines(st.session_state.selected_model)
 
 # ============================================================================
 # SMART QUERY HANDLER - Direct First, LLM Fallback
@@ -961,7 +1090,7 @@ def format_direct_query_response(result):
 # UI LAYOUT
 # ============================================================================
 
-st.title("ACA Policy Assistant (Enhanced)")
+st.title("ACA Policy Assistant")
 st.markdown("**Fast direct queries** with intelligent LLM fallback | Ask questions about Health Reimbursement Arrangements (HRAs)")
 
 # Create tabs like the original
@@ -974,10 +1103,143 @@ with tab2:
     st.header("Graph Visualization")
     st.markdown("Interactive visualization of the ACA Policy Graph showing HRA types and their relationships with stakeholders.")
     
-    # Quick link to Data Sources tab
-    data_sources_tab = get_data_sources(conn)
-    if data_sources_tab:
-        st.info(f"This graph is built from **{len(data_sources_tab)} authoritative sources**. Click the **'Data Sources' tab** to explore them!")
+    # Quick Query Section
+    st.subheader("🔍 Quick Insights")
+    st.markdown("Click a button to highlight relationships in the graph:")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if st.button("Who is Eligible for a QSEHRA Plan?", use_container_width=True):
+            st.session_state['highlight_query'] = {
+                'type': 'eligibility',
+                'hra': 'QSEHRA',
+                'relationship': 'Eligiblefor'
+            }
+    
+    with col2:
+        if st.button("What Plans Does Employer Fund?", use_container_width=True):
+            st.session_state['highlight_query'] = {
+                'type': 'reverse_funding',
+                'stakeholder': 'Employer',
+                'relationship': 'Fundedby',
+                'direction': 'reverse'
+            }
+    
+    with col3:
+        if st.button("Clear Highlight", use_container_width=True):
+            st.session_state['highlight_query'] = None
+    
+    # Show answer for highlighted query
+    if 'highlight_query' in st.session_state and st.session_state['highlight_query']:
+        query_info = st.session_state['highlight_query']
+        direction = query_info.get('direction', 'forward')
+        
+        try:
+            # Handle reverse queries (Stakeholder -> HRA)
+            if direction == 'reverse':
+                stakeholder_name = query_info.get('stakeholder')
+                rel_type = query_info.get('relationship')
+                
+                if rel_type == 'Fundedby':
+                    answer_query = """
+                    MATCH (h:HRATypes)-[:Fundedby]->(s:Stakeholders)
+                    WHERE s.StakeholderType = $stakeholder_name
+                    RETURN h.HRAType, h.Description
+                    """
+                    result = conn.execute(answer_query, {"stakeholder_name": stakeholder_name})
+                    answer_rows = result.get_all()
+                    
+                    if answer_rows:
+                        unique_hras = list(set([row[0] for row in answer_rows]))
+                        unique_hras.sort()
+                        
+                        if len(unique_hras) <= 5:
+                            hra_list = ", ".join(unique_hras)
+                        else:
+                            hra_list = ", ".join(unique_hras[:5]) + f" and {len(unique_hras) - 5} more"
+                        
+                        st.success(f"✅ **{stakeholder_name} funds {len(unique_hras)} HRA plan(s):** {hra_list}")
+                        
+                        # Show full list in expander
+                        with st.expander(f"View All {len(unique_hras)} HRA Plans"):
+                            for hra in unique_hras:
+                                desc = next((row[1] for row in answer_rows if row[0] == hra), None)
+                                st.markdown(f"**{hra}**")
+                                if desc:
+                                    st.caption(desc)
+                                st.markdown("---")
+                    else:
+                        st.info("No relationships found.")
+            
+            # Handle forward queries (HRA -> Stakeholder)
+            else:
+                hra_name = query_info.get('hra')
+                rel_type = query_info.get('relationship')
+                
+                # Query based on relationship type (use explicit relationship names)
+                if rel_type == 'AdministratedBy':
+                    answer_query = """
+                    MATCH (h:HRATypes)-[:AdministratedBy]->(s:Stakeholders)
+                    WHERE h.HRAType = $hra_name
+                    RETURN s.StakeholderType, s.Description
+                    """
+                elif rel_type == 'Eligiblefor':
+                    answer_query = """
+                    MATCH (h:HRATypes)-[:Eligiblefor]->(s:Stakeholders)
+                    WHERE h.HRAType = $hra_name
+                    RETURN s.StakeholderType, s.Description
+                    """
+                elif rel_type == 'Fundedby':
+                    answer_query = """
+                    MATCH (h:HRATypes)-[:Fundedby]->(s:Stakeholders)
+                    WHERE h.HRAType = $hra_name
+                    RETURN s.StakeholderType, s.Description
+                    """
+                else:
+                    st.error(f"Unknown relationship type: {rel_type}")
+                    answer_rows = []
+                
+                if rel_type in ['AdministratedBy', 'Eligiblefor', 'Fundedby']:
+                    result = conn.execute(answer_query, {"hra_name": hra_name})
+                    answer_rows = result.get_all()
+                else:
+                    answer_rows = []
+                
+                if answer_rows:
+                    # Get unique stakeholders
+                    unique_stakeholders = list(set([row[0] for row in answer_rows]))
+                    unique_stakeholders.sort()
+                    
+                    # Show concise answer
+                    if len(unique_stakeholders) <= 5:
+                        stakeholder_list = ", ".join(unique_stakeholders)
+                    else:
+                        stakeholder_list = ", ".join(unique_stakeholders[:5]) + f" and {len(unique_stakeholders) - 5} more"
+                    
+                    if query_info['type'] == 'eligibility':
+                        st.success(f"✅ **{hra_name} is available to {len(unique_stakeholders)} stakeholder(s):** {stakeholder_list}")
+                    elif query_info['type'] == 'administration':
+                        st.success(f"✅ **{hra_name} is administered by {len(unique_stakeholders)} stakeholder(s):** {stakeholder_list}")
+                    elif query_info['type'] == 'funding':
+                        st.success(f"✅ **{hra_name} is funded by {len(unique_stakeholders)} stakeholder(s):** {stakeholder_list}")
+                    
+                    # Show full list in expander
+                    with st.expander(f"View All {len(unique_stakeholders)} Stakeholders"):
+                        for stakeholder in unique_stakeholders:
+                            # Find description for this stakeholder
+                            desc = next((row[1] for row in answer_rows if row[0] == stakeholder), None)
+                            st.markdown(f"**{stakeholder}**")
+                            if desc:
+                                st.caption(desc)
+                            st.markdown("---")
+                else:
+                    st.info("No relationships found.")
+                
+        except Exception as e:
+            st.error(f"Error fetching answer: {str(e)}")
+    
+    st.markdown("---")
     
     # Fetch and display graph
     with st.spinner("Loading graph data..."):
@@ -1071,9 +1333,98 @@ with tab2:
             if not filtered_nodes or not filtered_edges:
                 st.warning("No nodes or relationships match your current filters. Try adjusting your filter selections.")
             else:
+                # Get highlight query if exists
+                highlight = st.session_state.get('highlight_query', None)
+                
                 # Create and display graph
-                fig = create_network_graph(filtered_nodes, filtered_edges)
+                fig = create_network_graph(filtered_nodes, filtered_edges, highlight)
                 st.plotly_chart(fig, use_container_width=True)
+                
+                # Add helpful tips
+                with st.expander("💡 Tips for Using the Graph"):
+                    st.markdown("""
+                    **How to explore:**
+                    - 🔍 Use the Quick Insights buttons above to highlight specific relationships
+                    - 🖱️ Hover over nodes to see descriptions
+                    - 🖱️ Hover over edges to see relationship details
+                    - 🔎 Use filters to focus on specific HRA types or stakeholders
+                    - 📊 Check the data table below to see all relationships
+                    
+                    **Understanding the colors:**
+                    - 🔵 Blue nodes = HRA Types (QSEHRA, ICHRA, etc.)
+                    - 🟢 Green nodes = Stakeholders (Employers, IRS, etc.)
+                    - 🔴 Red highlights = Your selected query results
+                    
+                    **Example questions you can answer:**
+                    - "Who is eligible for ICHRA?" → Click the button above!
+                    - "Who administers QSEHRA?" → Use the Quick Insights buttons
+                    - "What relationships does the IRS have?" → Find IRS node in the graph
+                    """)
+                
+                # Add node information panel
+                st.subheader("📋 Explore Individual Entities")
+                
+                # Create two columns for HRA and Stakeholder selection
+                info_col1, info_col2 = st.columns(2)
+                
+                with info_col1:
+                    st.markdown("**Select an HRA Type:**")
+                    hra_list = sorted([n['id'] for n in filtered_nodes if n['type'] == 'HRAType'])
+                    if hra_list:
+                        selected_hra = st.selectbox("Choose HRA", hra_list, key="hra_selector")
+                        
+                        if selected_hra:
+                            # Show all relationships for this HRA (deduplicated)
+                            hra_relationships = [e for e in filtered_edges if e['source'] == selected_hra]
+                            
+                            if hra_relationships:
+                                # Group by relationship type and deduplicate targets
+                                by_type = {}
+                                for rel in hra_relationships:
+                                    rel_type = rel['relationship']
+                                    if rel_type not in by_type:
+                                        by_type[rel_type] = set()
+                                    by_type[rel_type].add(rel['target'])
+                                
+                                # Count unique relationships
+                                total_unique = sum(len(targets) for targets in by_type.values())
+                                st.markdown(f"**{selected_hra} has {total_unique} unique relationships:**")
+                                
+                                for rel_type, targets in by_type.items():
+                                    sorted_targets = sorted(list(targets))
+                                    if len(sorted_targets) <= 5:
+                                        st.caption(f"**{rel_type}:** {', '.join(sorted_targets)}")
+                                    else:
+                                        st.caption(f"**{rel_type}:** {', '.join(sorted_targets[:5])} and {len(sorted_targets) - 5} more")
+                
+                with info_col2:
+                    st.markdown("**Select a Stakeholder:**")
+                    stakeholder_list = sorted([n['id'] for n in filtered_nodes if n['type'] == 'Stakeholder'])
+                    if stakeholder_list:
+                        selected_stakeholder = st.selectbox("Choose Stakeholder", stakeholder_list, key="stakeholder_selector")
+                        
+                        if selected_stakeholder:
+                            # Show all HRAs related to this stakeholder (deduplicated)
+                            stakeholder_rels = [e for e in filtered_edges if e['target'] == selected_stakeholder]
+                            
+                            if stakeholder_rels:
+                                # Group by relationship type and deduplicate sources
+                                by_type = {}
+                                for rel in stakeholder_rels:
+                                    rel_type = rel['relationship']
+                                    if rel_type not in by_type:
+                                        by_type[rel_type] = set()
+                                    by_type[rel_type].add(rel['source'])
+                                
+                                # Count unique relationships
+                                total_unique = sum(len(sources) for sources in by_type.values())
+                                st.markdown(f"**{selected_stakeholder} is involved with {total_unique} unique HRAs:**")
+                                
+                                for rel_type, sources in by_type.items():
+                                    sorted_sources = sorted(list(sources))
+                                    st.caption(f"**{rel_type}:** {', '.join(sorted_sources)}")
+                
+                st.markdown("---")
                 
                 # Show data table
                 with st.expander("View Filtered Relationships Data"):
@@ -1285,39 +1636,34 @@ with tab3:
 with st.sidebar:
     st.header("About")
     st.markdown("""
-    This enhanced assistant uses **direct database queries** for common questions and falls back to AI when needed.
-    
-    **Topics:**
-    - **HRA Types**: QSEHRA, ICHRA, etc.
-    - **Stakeholders**: IRS, DOL, Employers, etc.
-    - **Relationships**: Administration, Eligibility, Funding
-    
-    ### Enhanced Features
-    - ⚡ **100x faster** for common queries
-    - 🎯 **99% reliability**
-    - 💰 **90% cost reduction**
-    - 📊 **Performance tracking**
+    This assistant uses **direct database queries** for common questions and falls back to AI when needed.
     """)
     
-    # Data Sources Section
-    st.header("Data Sources")
-    with st.spinner("Loading sources..."):
-        data_sources = get_data_sources(conn)
+    # Fetch and display available HRA types, stakeholders, and relationships
+    st.header("Available Topics")
     
-    if data_sources:
-        st.metric("Total Sources", len(data_sources))
-        
-        # Show preview of first 3 sources
-        st.markdown("**Recent Sources:**")
-        for source in data_sources[:3]:
-            st.caption(f"• {source['title'][:40]}...")
-        
-        # Button to view all sources
-        st.info("**Click the 'Data Sources' tab** above to search, filter, and explore all sources!")
-    else:
-        st.info("No data sources available")
+    hra_types, stakeholders = get_available_topics(conn)
     
-    # Performance Stats
+    # Display HRA Types
+    if hra_types:
+        st.subheader("HRA Types")
+        for hra in hra_types:
+            st.caption(f"• {hra}")
+    
+    # Display Stakeholders
+    if stakeholders:
+        st.subheader("Stakeholders")
+        for stakeholder in stakeholders:
+            st.caption(f"• {stakeholder}")
+    
+    # Display Relationships
+    st.subheader("Relationships")
+    st.caption("• AdministratedBy")
+    st.caption("• Eligiblefor")
+    st.caption("• Fundedby")
+    
+    st.markdown("---")
+    
     st.header("Performance Stats")
     total = st.session_state.query_stats['direct_queries'] + st.session_state.query_stats['llm_queries']
     if total > 0:
@@ -1342,7 +1688,10 @@ with st.sidebar:
     # Update session state if model changed
     if selected_model != st.session_state.selected_model:
         st.session_state.selected_model = selected_model
-        st.info(f"Model changed to {selected_model}. LLM queries will use this model.")
+        # Clear cache to force reload with new model
+        st.cache_resource.clear()
+        st.info(f"Model changed to {selected_model}. Reinitializing with new model...")
+        st.rerun()
     
     # Display current model endpoint
     st.caption(f"Endpoint: `{AVAILABLE_MODELS[selected_model]}`")
@@ -1372,37 +1721,25 @@ with st.sidebar:
 # ============================================================================
 with tab1:
     # Helper for complex queries
-    st.info("⚡ **Enhanced Mode**: Common questions answered instantly. Complex queries use AI.")
+    st.info("🤖 **AI-Powered Assistant**: Ask any question about HRAs and get detailed answers.")
     
-    # Query mode selector
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        user_input = st.text_input(
-            "Enter your question:",
-            placeholder="e.g., What is QSEHRA? Who administers ICHRA?",
-            key="question_input"
-        )
-    with col2:
-        query_mode = st.selectbox(
-            "Mode",
-            ["Auto (Smart)", "Force LLM"],
-            help="Auto tries direct query first. Force LLM always uses AI model."
-        )
+    # Query input (full width, no mode selector)
+    user_input = st.text_input(
+        "Enter your question:",
+        placeholder="e.g., Give an overview of a QSEHRA HRA",
+        key="question_input"
+    )
     
     # Example questions
     with st.expander("📝 Example Questions"):
         st.markdown("""
-        **Instant answers (direct query):**
-        - What is a QSEHRA?
-        - Who administers ICHRA?
-        - Who is eligible for GCHRA?
-        - List all HRA types
-        - Who funds EBHRA?
-        
-        **AI-powered (uses LLM):**
-        - Compare QSEHRA and ICHRA
+        **Try these questions:**
+        - Give an overview of a QSEHRA HRA.
+        - Give an overview of who is eligible for a QSEHRA HRA.
+        - Give an expanded answer on which HRA types are funded by employers?
+        - Give an overview on how the IRS administrates an ICHRA HRA.
         - What are the pros and cons of different HRAs?
-        - Give me a detailed analysis of ICHRA administration
+        - Compare QSEHRA and ICHRA
         """)
     
     # Send button
@@ -1411,9 +1748,9 @@ with tab1:
             st.warning("Please enter a question.")
         else:
             # Show processing indicator
-            with st.spinner("Processing..."):
-                use_llm = (query_mode == "Force LLM")
-                result = smart_query_handler(user_input, use_llm_first=use_llm)
+            with st.spinner("Processing your question with AI..."):
+                # Always use LLM for consistent, detailed answers
+                result = smart_query_handler(user_input, use_llm_first=True)
             
             # Display results
             st.markdown("---")
@@ -1527,15 +1864,10 @@ if st.session_state.query_history:
 # Footer
 st.markdown("---")
 
-# Get source count for footer
-footer_sources = get_data_sources(conn)
-source_count = len(footer_sources)
-
 st.markdown(
-    f"""
+    """
     <div style='text-align: center; color: gray;'>
-    <small>Enhanced with Direct Queries | 100x Faster | Powered by Kuzu + Databricks LLM</small><br>
-    <small>Built from {source_count} authoritative sources</small>
+    <small>Enhanced with Direct Queries | 100x Faster | Powered by Kuzu + Databricks LLM</small>
     </div>
     """,
     unsafe_allow_html=True
