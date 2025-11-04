@@ -55,7 +55,7 @@ def get_database_and_graph():
     Initialize database connection once and cache it.
     This prevents recreating the connection on every Streamlit rerun.
     """
-    # Database is in ../data/ relative to app location
+    # Database is in ../app/ relative to app.py location
     db = kuzu.Database("AIPolicyAssistant_database.kuzu")
     conn = kuzu.Connection(db)
     graph = KuzuGraph(db, allow_dangerous_requests=True)
@@ -251,10 +251,12 @@ def get_graph_data(_conn):
         # Get all relationships - query each type separately since Kuzu doesn't support type()
         edges = []
         
-        # Query AdministratedBy relationships
+        # Query AdministratedBy relationships with enhanced properties
         admin_query = """
         MATCH (h:HRATypes)-[r:AdministratedBy]->(s:Stakeholders)
-        RETURN h.HRAType, s.StakeholderType
+        RETURN h.HRAType, s.StakeholderType, 
+               r.requirements, r.conditions, r.exclusions, 
+               r.key_quote, r.confidence, r.source_url
         """
         admin_result = _conn.execute(admin_query)
         while admin_result.has_next():
@@ -263,13 +265,22 @@ def get_graph_data(_conn):
                 'source': row[0],
                 'target': row[1],
                 'relationship': 'AdministratedBy',
-                'description': 'Administration relationship'
+                'description': row[2] if row[2] else 'Administration relationship',
+                'requirements': row[2] if row[2] else None,
+                'conditions': row[3] if row[3] else None,
+                'exclusions': row[4] if row[4] else None,
+                'key_quote': row[5] if row[5] else None,
+                'confidence': row[6] if row[6] else None,
+                'source_url': row[7] if row[7] else None,
+                'enhanced': row[2] is not None  # Flag if enhanced
             })
         
-        # Query Eligiblefor relationships
+        # Query Eligiblefor relationships with enhanced properties
         elig_query = """
         MATCH (h:HRATypes)-[r:Eligiblefor]->(s:Stakeholders)
-        RETURN h.HRAType, s.StakeholderType
+        RETURN h.HRAType, s.StakeholderType,
+               r.requirements, r.conditions, r.exclusions,
+               r.key_quote, r.confidence, r.source_url
         """
         elig_result = _conn.execute(elig_query)
         while elig_result.has_next():
@@ -278,13 +289,22 @@ def get_graph_data(_conn):
                 'source': row[0],
                 'target': row[1],
                 'relationship': 'Eligiblefor',
-                'description': 'Eligibility relationship'
+                'description': row[2] if row[2] else 'Eligibility relationship',
+                'requirements': row[2] if row[2] else None,
+                'conditions': row[3] if row[3] else None,
+                'exclusions': row[4] if row[4] else None,
+                'key_quote': row[5] if row[5] else None,
+                'confidence': row[6] if row[6] else None,
+                'source_url': row[7] if row[7] else None,
+                'enhanced': row[2] is not None  # Flag if enhanced
             })
         
-        # Query Fundedby relationships
+        # Query Fundedby relationships with enhanced properties
         fund_query = """
         MATCH (h:HRATypes)-[r:Fundedby]->(s:Stakeholders)
-        RETURN h.HRAType, s.StakeholderType
+        RETURN h.HRAType, s.StakeholderType,
+               r.requirements, r.conditions, r.exclusions,
+               r.key_quote, r.confidence, r.source_url
         """
         fund_result = _conn.execute(fund_query)
         while fund_result.has_next():
@@ -293,7 +313,14 @@ def get_graph_data(_conn):
                 'source': row[0],
                 'target': row[1],
                 'relationship': 'Fundedby',
-                'description': 'Funding relationship'
+                'description': row[2] if row[2] else 'Funding relationship',
+                'requirements': row[2] if row[2] else None,
+                'conditions': row[3] if row[3] else None,
+                'exclusions': row[4] if row[4] else None,
+                'key_quote': row[5] if row[5] else None,
+                'confidence': row[6] if row[6] else None,
+                'source_url': row[7] if row[7] else None,
+                'enhanced': row[2] is not None  # Flag if enhanced
             })
         
         # Check if we got any data
@@ -346,18 +373,64 @@ def create_network_graph(nodes, edges):
         x0, y0 = pos[edge['source']]
         x1, y1 = pos[edge['target']]
         
-        # Create detailed hover text for edges
-        edge_hover = f"<b>Relationship:</b> {edge['relationship']}<br>"
+        # Create detailed hover text for edges with enhanced properties
+        edge_hover = f"<b style='font-size:14px'>{edge['relationship']}</b><br>"
         edge_hover += f"<b>From:</b> {edge['source']}<br>"
         edge_hover += f"<b>To:</b> {edge['target']}<br>"
-        edge_hover += f"<b>Details:</b><br>{edge['description']}"
+        edge_hover += "<br>"
+        
+        # Show enhanced properties if available
+        if edge.get('enhanced'):
+            if edge.get('confidence'):
+                confidence_pct = int(edge['confidence'] * 100)
+                edge_hover += f"<b>Confidence:</b> {confidence_pct}%<br><br>"
+            
+            if edge.get('requirements'):
+                req_text = edge['requirements'][:200] + '...' if len(edge['requirements']) > 200 else edge['requirements']
+                edge_hover += f"<b>Requirements:</b><br>{req_text}<br><br>"
+            
+            if edge.get('conditions'):
+                cond_text = edge['conditions'][:150] + '...' if len(edge['conditions']) > 150 else edge['conditions']
+                edge_hover += f"<b>Conditions:</b><br>{cond_text}<br><br>"
+            
+            if edge.get('exclusions'):
+                excl_text = edge['exclusions'][:150] + '...' if len(edge['exclusions']) > 150 else edge['exclusions']
+                edge_hover += f"<b>Exclusions:</b><br>{excl_text}<br><br>"
+            
+            if edge.get('key_quote'):
+                quote_text = edge['key_quote'][:150] + '...' if len(edge['key_quote']) > 150 else edge['key_quote']
+                edge_hover += f"<b>Key Quote:</b><br><i>{quote_text}</i><br>"
+        else:
+            edge_hover += f"<b>Details:</b><br>{edge['description']}<br>"
+            edge_hover += "<i>(Not yet enhanced with detailed properties)</i>"
+        
+        # Style edge based on enhancement status and confidence
+        edge_color = '#95a5a6'  # Default gray
+        edge_width = 2
+        edge_dash = None
+        
+        if edge.get('enhanced'):
+            # Enhanced edges: color by confidence
+            confidence = edge.get('confidence', 0)
+            if confidence >= 0.8:
+                edge_color = '#27ae60'  # High confidence: Green
+                edge_width = 3
+            elif confidence >= 0.6:
+                edge_color = '#3498db'  # Medium confidence: Blue
+                edge_width = 2.5
+            else:
+                edge_color = '#f39c12'  # Lower confidence: Orange
+                edge_width = 2
+        else:
+            # Not enhanced: dashed gray line
+            edge_dash = 'dash'
         
         # Create edge line
         edge_trace = go.Scatter(
             x=[x0, x1, None],
             y=[y0, y1, None],
             mode='lines',
-            line=dict(width=2, color='#95a5a6'),
+            line=dict(width=edge_width, color=edge_color, dash=edge_dash),
             hoverinfo='text',
             hovertext=edge_hover,
             showlegend=False,
@@ -1107,6 +1180,37 @@ with tab2:
         nodes, edges = get_graph_data(conn)
         
         if nodes and edges:
+            # Show enhancement statistics
+            enhanced_count = sum(1 for e in edges if e.get('enhanced'))
+            total_count = len(edges)
+            enhancement_pct = int((enhanced_count / total_count * 100)) if total_count > 0 else 0
+            
+            stat_col1, stat_col2, stat_col3, stat_col4 = st.columns(4)
+            with stat_col1:
+                st.metric("Total Relationships", total_count)
+            with stat_col2:
+                st.metric("Enhanced", enhanced_count, f"{enhancement_pct}%")
+            with stat_col3:
+                avg_confidence = sum(e.get('confidence', 0) for e in edges if e.get('enhanced')) / enhanced_count if enhanced_count > 0 else 0
+                st.metric("Avg Confidence", f"{int(avg_confidence * 100)}%")
+            with stat_col4:
+                high_conf_count = sum(1 for e in edges if e.get('confidence', 0) >= 0.8)
+                st.metric("High Confidence (≥80%)", high_conf_count)
+            
+            # Legend for edge colors
+            with st.expander("📊 Graph Legend"):
+                st.markdown("""
+                **Edge Colors & Styles:**
+                - 🟢 **Green (Thick)**: High confidence (≥80%)
+                - 🔵 **Blue (Medium)**: Medium confidence (60-79%)
+                - 🟠 **Orange (Thin)**: Lower confidence (<60%)
+                - ⚪ **Gray (Dashed)**: Not yet enhanced
+                
+                **Hover over edges** to see detailed requirements, conditions, and exclusions!
+                """)
+            
+            st.divider()
+            
             # Create filter section
             st.subheader("Filters")
             
@@ -1144,12 +1248,34 @@ with tab2:
             # Additional stakeholder filter
             stakeholder_options = sorted([n['id'] for n in nodes if n['type'] == 'Stakeholder'])
             with st.expander("Advanced Filters"):
-                selected_stakeholders = st.multiselect(
-                    "Specific Stakeholders",
-                    options=stakeholder_options,
-                    default=stakeholder_options,
-                    help="Select specific stakeholders to display"
-                )
+                filter_adv_col1, filter_adv_col2 = st.columns(2)
+                
+                with filter_adv_col1:
+                    selected_stakeholders = st.multiselect(
+                        "Specific Stakeholders",
+                        options=stakeholder_options,
+                        default=stakeholder_options,
+                        help="Select specific stakeholders to display"
+                    )
+                
+                with filter_adv_col2:
+                    # Enhancement filter
+                    enhancement_filter = st.selectbox(
+                        "Enhancement Status",
+                        options=["All", "Enhanced Only", "Not Enhanced"],
+                        help="Filter by enhancement status"
+                    )
+                    
+                    # Confidence filter
+                    if enhanced_count > 0:
+                        min_confidence = st.slider(
+                            "Minimum Confidence",
+                            min_value=0,
+                            max_value=100,
+                            value=0,
+                            step=10,
+                            help="Show only relationships with confidence ≥ this threshold"
+                        )
             
             # Apply filters
             filtered_nodes = []
@@ -1175,8 +1301,22 @@ with tab2:
                     continue
                 
                 # Check if both source and target nodes are in filtered nodes
-                if edge['source'] in filtered_node_ids and edge['target'] in filtered_node_ids:
-                    filtered_edges.append(edge)
+                if edge['source'] not in filtered_node_ids or edge['target'] not in filtered_node_ids:
+                    continue
+                
+                # Apply enhancement filter
+                if enhancement_filter == "Enhanced Only" and not edge.get('enhanced'):
+                    continue
+                elif enhancement_filter == "Not Enhanced" and edge.get('enhanced'):
+                    continue
+                
+                # Apply confidence filter
+                if enhanced_count > 0 and edge.get('enhanced'):
+                    edge_confidence = edge.get('confidence', 0) * 100
+                    if edge_confidence < min_confidence:
+                        continue
+                
+                filtered_edges.append(edge)
             
             # Display statistics
             st.markdown("---")
@@ -1198,10 +1338,66 @@ with tab2:
                 fig = create_network_graph(filtered_nodes, filtered_edges)
                 st.plotly_chart(fig, use_container_width=True)
                 
+                # Show enhanced relationships details
+                enhanced_edges = [e for e in filtered_edges if e.get('enhanced')]
+                if enhanced_edges:
+                    with st.expander(f"📋 View Enhanced Relationships Details ({len(enhanced_edges)} relationships)"):
+                        # Sort by confidence
+                        enhanced_edges_sorted = sorted(enhanced_edges, key=lambda x: x.get('confidence', 0), reverse=True)
+                        
+                        for idx, edge in enumerate(enhanced_edges_sorted[:20]):  # Show top 20
+                            confidence_pct = int(edge.get('confidence', 0) * 100)
+                            
+                            # Confidence badge
+                            if confidence_pct >= 80:
+                                conf_color = "🟢"
+                            elif confidence_pct >= 60:
+                                conf_color = "🔵"
+                            else:
+                                conf_color = "🟠"
+                            
+                            st.markdown(f"### {conf_color} {edge['source']} → {edge['relationship']} → {edge['target']}")
+                            st.markdown(f"**Confidence:** {confidence_pct}%")
+                            
+                            detail_col1, detail_col2 = st.columns(2)
+                            
+                            with detail_col1:
+                                if edge.get('requirements'):
+                                    st.markdown("**📋 Requirements:**")
+                                    st.info(edge['requirements'])
+                                
+                                if edge.get('conditions'):
+                                    st.markdown("**⚙️ Conditions:**")
+                                    st.info(edge['conditions'])
+                            
+                            with detail_col2:
+                                if edge.get('exclusions'):
+                                    st.markdown("**🚫 Exclusions:**")
+                                    st.warning(edge['exclusions'])
+                                
+                                if edge.get('key_quote'):
+                                    st.markdown("**💬 Key Quote:**")
+                                    st.success(f"_{edge['key_quote']}_")
+                            
+                            if edge.get('source_url'):
+                                st.markdown(f"**🔗 Source:** [{edge['source_url']}]({edge['source_url']})")
+                            
+                            if idx < len(enhanced_edges_sorted) - 1:
+                                st.divider()
+                        
+                        if len(enhanced_edges) > 20:
+                            st.info(f"Showing top 20 of {len(enhanced_edges)} enhanced relationships (sorted by confidence)")
+                
                 # Show data table
-                with st.expander("View Filtered Relationships Data"):
+                with st.expander("View All Relationships Data (Table)"):
                     df = pd.DataFrame(filtered_edges)
-                    st.dataframe(df, use_container_width=True)
+                    # Select relevant columns
+                    display_cols = ['source', 'relationship', 'target']
+                    if 'confidence' in df.columns:
+                        display_cols.append('confidence')
+                    if 'requirements' in df.columns:
+                        display_cols.append('requirements')
+                    st.dataframe(df[display_cols], use_container_width=True)
         else:
             st.warning("No graph data available or error loading data.")
 
@@ -1503,16 +1699,17 @@ with tab1:
     st.info("**For best results**: Ask simple, focused questions. Break complex queries into multiple smaller questions.")
     
     # Main input - store in session state to persist across reruns
-    user_input = st.text_input("Enter your question:", placeholder="e.g., What is a QSEHRA HRA?", key="question_input")
+    user_input = st.text_input("Enter your question:", placeholder="e.g., What is QSEHRA?", key="question_input")
 
     # Example questions
     with st.expander("Example Questions"):
         st.markdown("""
         **Sample questions you can ask:**
-        - What is a QSEHRA HRA?
-        - Give an overview of who is eligible for a QSEHRA HRA.  
+        - What is a Limited Purpose HRA?
+        - Give an overview on how the IRS administrates a ICHRA HRA
+        - Give an overview of who eligible for a QSEHRA HRA.
         - Give an expanded answer on which HRA types are funded by employers?
-        - Give me details on when should consumers with an individual coverage HRA offer or a QSEHRA enroll in individual health insurance coverage.
+        - Give me details on when should consumers with an individual coverage HRA offer or a QSEHRA enroll in individual health insurance coverage
         """)
 
     # Query button and processing
