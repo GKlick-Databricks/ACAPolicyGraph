@@ -1,0 +1,5809 @@
+{
+  "extracted_relationships": [
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "SN 07",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "SN 08",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "SN 09",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N001",
+      "source_type": "N",
+      "target_id": "SN 10",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N002",
+      "source_type": "N",
+      "target_id": "SN 08",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "SN 04",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N003",
+      "source_type": "N",
+      "target_id": "SN 09",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "AuthN 19",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "SN 07",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N004",
+      "source_type": "N",
+      "target_id": "SN 08",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "AuthN 07",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "COBRA Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "SN 03",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "SN 05",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N005",
+      "source_type": "N",
+      "target_id": "SN 09",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "AuthN 10",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "SN 08",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "SN 09",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N006",
+      "source_type": "N",
+      "target_id": "SN 10",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "AuthN 08",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to AuthN",
+      "link_column": "Link to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "PlanAdministrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "SN 01",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "SN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "SN 04",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "N007",
+      "source_type": "N",
+      "target_id": "SN 10",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to SN ",
+      "link_column": "Link to SN ",
+      "extracted": true
+    },
+    {
+      "source_id": "\u00a7213(d) Medical Expenses",
+      "source_type": "Term",
+      "target_id": "AuthN 01",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Affordability (2025)",
+      "source_type": "Term",
+      "target_id": "AuthN 13",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Affordability Percentage",
+      "source_type": "Term",
+      "target_id": "AuthN 13",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Applicable large employer",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Applicable large employer member",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "APTC",
+      "source_type": "Term",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Attestation",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Carryover",
+      "source_type": "Term",
+      "target_id": "AuthN 17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Cash out",
+      "source_type": "Term",
+      "target_id": "AuthN17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "COBRA",
+      "source_type": "Term",
+      "target_id": "AuthN 05",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "COBRA Continuation Coverage",
+      "source_type": "Term",
+      "target_id": "AuthN 05",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "COBRA Election Notice",
+      "source_type": "Term",
+      "target_id": "AuthN 07",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "COBRA Excise Tax",
+      "source_type": "Term",
+      "target_id": "AuthN 04",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "COBRA General Framework",
+      "source_type": "Term",
+      "target_id": "AuthN 05",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "COBRA General Notice",
+      "source_type": "Term",
+      "target_id": "AuthN 06",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EBHRA",
+      "source_type": "Term",
+      "target_id": "AuthN 10",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EBHRA Cap (Annual)",
+      "source_type": "Term",
+      "target_id": "AuthN 15",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Election Window (COBRA)",
+      "source_type": "Term",
+      "target_id": "AuthN 07",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Employee",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Employee",
+      "source_type": "Term",
+      "target_id": "AuthN 24",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Employer",
+      "source_type": "Term",
+      "target_id": "AuthN 25",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Excepted Benefits",
+      "source_type": "Term",
+      "target_id": "AuthN10",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Federal Poverty Line (FPL)",
+      "source_type": "Term",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "FPL Safe Harbor",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Full-time equivalent employee (FTE)",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Group Health Plan (GHP)",
+      "source_type": "Term",
+      "target_id": "AuthN 11",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "HIPAA",
+      "source_type": "Term",
+      "target_id": "AuthN 08",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "HIPAA NPP",
+      "source_type": "Term",
+      "target_id": "AuthN 08",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "HIPAA Privacy Rule",
+      "source_type": "Term",
+      "target_id": "AuthN 08",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Household Income",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "HRA",
+      "source_type": "Term",
+      "target_id": "AuthN 17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "ICHRA",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Individual Coverage",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Integration (Group)",
+      "source_type": "Term",
+      "target_id": "AuthN 11",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Integration (Individual/Medicare)",
+      "source_type": "Term",
+      "target_id": "AuthN09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Limited Purpose HRA",
+      "source_type": "Term",
+      "target_id": "AuthN 17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Marketplace",
+      "source_type": "Term",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "MEC",
+      "source_type": "Term",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Minimum Essential Coverage (MEC)",
+      "source_type": "Term",
+      "target_id": "AuthN 26",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Minimum Value",
+      "source_type": "Term",
+      "target_id": "AuthN 11",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Model Notice",
+      "source_type": "Term",
+      "target_id": "AuthN 07",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Monthly Equivalency (Full-time employees)",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Monthly Measurement rule for full time employees",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Opt out (ICHRA)",
+      "source_type": "Term",
+      "target_id": "AuthN09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Part-Time Employee",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "PHI",
+      "source_type": "Term",
+      "target_id": "AuthN 08",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Plan year",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Post Deductible HRA",
+      "source_type": "Term",
+      "target_id": "AuthN 17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Privacy Officer",
+      "source_type": "Term",
+      "target_id": "AuthN 08",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "PTC",
+      "source_type": "Term",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "QSEHRA Caps (Annual)",
+      "source_type": "Term",
+      "target_id": "AuthN16",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Qualified Beneficiary (QB)",
+      "source_type": "Term",
+      "target_id": "AuthN 05",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Qualified Health Plan (QHP)",
+      "source_type": "Term",
+      "target_id": "AuthN14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Qualifying Event (COBRA)",
+      "source_type": "Term",
+      "target_id": "AuthN 05",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Rate of Pay Safe Harbor",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Retiree Only HRA",
+      "source_type": "Term",
+      "target_id": "AuthN 17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Safe Harbor (General)",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Seasonal Employee",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Seasonal Worker",
+      "source_type": "Term",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Special Enrollment Period (SEP)",
+      "source_type": "Term",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "STLDI",
+      "source_type": "Term",
+      "target_id": "AuthN10",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Substantiation",
+      "source_type": "Term",
+      "target_id": "AuthN 17",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "Traditional Integrated HRA",
+      "source_type": "Term",
+      "target_id": "AuthN 11",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "W 2 Safe Harbor",
+      "source_type": "Term",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 01",
+      "source_type": "EMPL",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 01",
+      "source_type": "EMPL",
+      "target_id": "Auth N 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 01",
+      "source_type": "EMPL",
+      "target_id": "AuthN 23",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 02",
+      "source_type": "EMPL",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 02",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 03",
+      "source_type": "EMPL",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 03",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 04",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 05",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 06",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 07",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 08",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 09",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 10",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 11",
+      "source_type": "EMPL",
+      "target_id": "AuthN 05",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 11",
+      "source_type": "EMPL",
+      "target_id": "AuthN 07",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 11",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 11",
+      "source_type": "EMPL",
+      "target_id": "AuthN 14",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "EMPL 12",
+      "source_type": "EMPL",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Linked to AuthN",
+      "link_column": "Linked to AuthN",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "AuthN 11",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "AuthN 18",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "COBRA Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 8",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 01",
+      "source_type": "HPN",
+      "target_id": "LinkN01",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "AuthN 03",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "AuthN 09",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "AuthN 03",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "Issuer Carrier",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 8",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 02",
+      "source_type": "HPN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "AuthN 10",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "AuthN 15",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "COBRA Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 8",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 03",
+      "source_type": "HPN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "AuthN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "AuthN 03",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "AuthN 19",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "AuthN 16",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 04",
+      "source_type": "HPN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "AuthN 17",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 05",
+      "source_type": "HPN",
+      "target_id": "LinkN 05",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "AuthN 17",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 06",
+      "source_type": "HPN",
+      "target_id": "LinkN 06",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "AuthN 17",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked to Auth N",
+      "link_column": "Linked to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "HPN 07",
+      "source_type": "HPN",
+      "target_id": "LinkN 07",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRA& PTC",
+      "link_column": "Link to HRA& PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "AuthN 11",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "AuthN 12",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "Employer group health plan",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 01",
+      "source_type": "LinkN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 03",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 09",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 12",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 13",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 14",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "Individual market (on/off Exchange) or Medicare",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 02",
+      "source_type": "LinkN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "AuthN 10",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "AuthN 15",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "Must be offered alongside group plan (enrollment optional)",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 03",
+      "source_type": "LinkN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "AuthN 02",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "AuthN 03",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "AuthN 19",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "AuthN 16",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "Individual coverage (MEC required)",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 04",
+      "source_type": "LinkN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "AuthN 17",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "AuthN 14",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "Medicare or retiree coverage",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 05",
+      "source_type": "LinkN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "AuthN 17",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "Dental/vision only (excepted benefits)",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 06",
+      "source_type": "LinkN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "AuthN 17",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "AuthN 27",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "AuthN 28",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Link to Auth N",
+      "link_column": "Link to Auth N",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "HDHP coverage",
+      "target_type": "Unknown",
+      "relationship_type": "references_via_Linked Coverage",
+      "link_column": "Linked Coverage",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "LinkN 07",
+      "source_type": "LinkN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "CalcN 01",
+      "target_type": "CalcN",
+      "relationship_type": "references_via_Link to CalCN",
+      "link_column": "Link to CalCN",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 13",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 27",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 28",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 01",
+      "source_type": "CalcDE",
+      "target_id": "LinkN 02",
+      "target_type": "HPN",
+      "relationship_type": "references_via_Link to HRA Type",
+      "link_column": "Link to HRA Type",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "CalcN 01",
+      "target_type": "CalcN",
+      "relationship_type": "references_via_Link to CalCN",
+      "link_column": "Link to CalCN",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 13",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 27",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 28",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 02",
+      "source_type": "CalcDE",
+      "target_id": "LinkN 02",
+      "target_type": "HPN",
+      "relationship_type": "references_via_Link to HRA Type",
+      "link_column": "Link to HRA Type",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "CalcN 01",
+      "target_type": "CalcN",
+      "relationship_type": "references_via_Link to CalCN",
+      "link_column": "Link to CalCN",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "CalcN 02",
+      "target_type": "CalcN",
+      "relationship_type": "references_via_Link to CalCN",
+      "link_column": "Link to CalCN",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 13",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 27",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 28",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 03",
+      "source_type": "CalcDE",
+      "target_id": "LinkN 02",
+      "target_type": "HPN",
+      "relationship_type": "references_via_Link to HRA Type",
+      "link_column": "Link to HRA Type",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "CalcN 01",
+      "target_type": "CalcN",
+      "relationship_type": "references_via_Link to CalCN",
+      "link_column": "Link to CalCN",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "CalcN 02",
+      "target_type": "CalcN",
+      "relationship_type": "references_via_Link to CalCN",
+      "link_column": "Link to CalCN",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 03",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 13",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 27",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 28",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "AuthN 09",
+      "target_type": "AuthN",
+      "relationship_type": "references_via_Link to Authority",
+      "link_column": "Link to Authority",
+      "extracted": true
+    },
+    {
+      "source_id": "CalcDE 04",
+      "source_type": "CalcDE",
+      "target_id": "LinkN 02",
+      "target_type": "HPN",
+      "relationship_type": "references_via_Link to HRA Type",
+      "link_column": "Link to HRA Type",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 01",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 01",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 01",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 01",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 01",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 01",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 02",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 03",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 04",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 04",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 04",
+      "source_type": "AuthN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 04",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 23",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 23",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 23",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 23",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 23",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 23",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "Dependent",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 05",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "COBRA Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 06",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "COBRA Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 07",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "Plan Administrator",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 08",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 09",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 10",
+      "source_type": "AuthN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "DOL",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 11",
+      "source_type": "AuthN",
+      "target_id": "LinkN 01",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "HHS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "LinkN 01",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 12",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 13",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "Marketplace",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 14",
+      "source_type": "AuthN",
+      "target_id": "LinkN 05",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 15",
+      "source_type": "AuthN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 16",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "LinkN 05",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "LinkN 06",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 17",
+      "source_type": "AuthN",
+      "target_id": "LinkN 07",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 18",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 18",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 18",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 18",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 18",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 18",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 19",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 20",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 20",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 20",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 20",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 21",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 21",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 21",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 21",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 22",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 22",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 22",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 22",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 24",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 24",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 24",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 24",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 25",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 25",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 25",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 25",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "LinkN 01",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  26",
+      "source_type": "AuthN",
+      "target_id": "LinkN 05",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 27",
+      "source_type": "AuthN",
+      "target_id": "LinkN 01",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 27",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 27",
+      "source_type": "AuthN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 27",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 27",
+      "source_type": "AuthN",
+      "target_id": "LinkN 05",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  28",
+      "source_type": "AuthN",
+      "target_id": "Federal Agencies",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  28",
+      "source_type": "AuthN",
+      "target_id": "LinkN 01",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  28",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  28",
+      "source_type": "AuthN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  28",
+      "source_type": "AuthN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN  28",
+      "source_type": "AuthN",
+      "target_id": "LinkN 05",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "Employer",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "Employee",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "IRS",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholders",
+      "link_column": "Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Link to Stakeholders",
+      "link_column": "Link to Stakeholders",
+      "extracted": true
+    },
+    {
+      "source_id": "AuthN 29",
+      "source_type": "AuthN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 01",
+      "source_type": "SN",
+      "target_id": "SN 01",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 01",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 01",
+      "source_type": "SN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 01",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 02",
+      "source_type": "SN",
+      "target_id": "SN 02",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 02",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 02",
+      "source_type": "SN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 02",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 03",
+      "source_type": "SN",
+      "target_id": "SN 03",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 03",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 03",
+      "source_type": "SN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 03",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 04",
+      "source_type": "SN",
+      "target_id": "SN 04",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 05",
+      "source_type": "SN",
+      "target_id": "SN 05",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 06",
+      "source_type": "SN",
+      "target_id": "SN 06",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 06",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 06",
+      "source_type": "SN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 06",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 07",
+      "source_type": "SN",
+      "target_id": "SN 07",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 07",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 07",
+      "source_type": "SN",
+      "target_id": "LinkN 03",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 07",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 08",
+      "source_type": "SN",
+      "target_id": "SN 08",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 08",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 08",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 09",
+      "source_type": "SN",
+      "target_id": "SN 09",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 10",
+      "source_type": "SN",
+      "target_id": "SN 10",
+      "target_type": "SN",
+      "relationship_type": "references_via_Stakeholder Number",
+      "link_column": "Stakeholder Number",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 10",
+      "source_type": "SN",
+      "target_id": "LinkN 02",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    },
+    {
+      "source_id": "SN 10",
+      "source_type": "SN",
+      "target_id": "LinkN 04",
+      "target_type": "LinkN",
+      "relationship_type": "references_via_Link to HRAs & PTC",
+      "link_column": "Link to HRAs & PTC",
+      "extracted": true
+    }
+  ]
+}
