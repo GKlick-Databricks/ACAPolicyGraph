@@ -1,0 +1,1876 @@
+{
+  "entities": {
+    "N001": {
+      "id": "N001",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N001",
+        "Name": "ICHRA Initial Notice",
+        "Type": "Initial",
+        "Plan Type": "ICHRA",
+        "Link to AuthN": "AuthN 03",
+        "When to send Notice": "Greater than or equal to 90 days before plan year,  upon hire mid-year",
+        "Who receives notice": "Employee",
+        "How is notice sent": "Either",
+        "What should be in the notice": "ICHRA terms,  contribution amount,  eligible classes,  Marketplace info,  PTC impact,  opt-out rights,  contact",
+        "Stakeholders": "Employer, Employee, Marketplace, IRS, DOL, HHS",
+        "Link to SN ": "SN 01, SN 02, SN 07, SN 08, SN 09, SN 10",
+        "Annual Notice? (Y/N)": "Yes",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": "*",
+        "Other notes": "Aligns with Exchange SEP windows",
+        "URL to model template (if any)": "https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/individual-coverage-health-reimbursement-arrangements-model-notice"
+      }
+    },
+    "N002": {
+      "id": "N002",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N002",
+        "Name": "ICHRA Opt-Out/Waiver",
+        "Type": "Election/Waiver",
+        "Plan Type": "ICHRA",
+        "Link to AuthN": "AuthN 03",
+        "When to send Notice": "During enrollment each plan year",
+        "Who receives notice": "Employee",
+        "How is notice sent": "Electronic",
+        "What should be in the notice": "Clear opportunity to decline ICHRA,  PTC implications of opt-out vs accept",
+        "Stakeholders": "Employer, Employee, IRS",
+        "Link to SN ": "SN 01, SN 02, SN 08",
+        "Annual Notice? (Y/N)": "Yes",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": "*",
+        "Other notes": "Keep records of elections",
+        "URL to model template (if any)": "*"
+      }
+    },
+    "N003": {
+      "id": "N003",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N003",
+        "Name": "Individual Coverage Attestation",
+        "Type": "Substantiation",
+        "Plan Type": "ICHRA",
+        "Link to AuthN": "AuthN 03",
+        "When to send Notice": "Annually and/or with reimbursements",
+        "Who receives notice": "Employee",
+        "How is notice sent": "Either",
+        "What should be in the notice": "Attestation of enrollment in individual coverage or Medicare",
+        "Stakeholders": "Employer, Employee, Plan Administrator, DOL",
+        "Link to SN ": "SN 01, SN 02, SN 04, SN 09",
+        "Annual Notice? (Y/N)": "Yes",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": "*",
+        "Other notes": "Must be obtained before premium reimbursement",
+        "URL to model template (if any)": "https://www.dol.gov/agencies/ebsa/laws-and-regulations/laws/affordable-care-act/for-employers-and-advisers/individual-coverage-health-reimbursement-arrangements-attestation"
+      }
+    },
+    "N004": {
+      "id": "N004",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N004",
+        "Name": "QSEHRA Annual Notice",
+        "Type": "Annual",
+        "Plan Type": "QSEHRA",
+        "Link to AuthN": "AuthN 19",
+        "When to send Notice": "Greater than or equal to 90 days before plan year,  upon eligibility",
+        "Who receives notice": "Employee",
+        "How is notice sent": "Either",
+        "What should be in the notice": "Benefit amount,  MEC requirement,  Marketplace/PTC coordination,  employer contact",
+        "Stakeholders": "Employer, Employee, Marketplace, IRS",
+        "Link to SN ": "SN 01, SN 02, SN 07, SN 08",
+        "Annual Notice? (Y/N)": "Yes",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": "$50/employee up to $2,500/yr",
+        "Other notes": "Written & timely distribution; retain proof",
+        "URL to model template (if any)": "*"
+      }
+    },
+    "N005": {
+      "id": "N005",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N005",
+        "Name": "COBRA Election Notice (HRA)",
+        "Type": "COBRA",
+        "Plan Type": "Traditional Integrated HRA, ICHR, EBHRA",
+        "Link to AuthN": "AuthN 07",
+        "When to send Notice": "Within 14 days of QE (or 44 if employer is plan admin)",
+        "Who receives notice": "Employee/Dependent",
+        "How is notice sent": "Either",
+        "What should be in the notice": "Continuation rights,  deadlines,  premium/payment terms,  duration (18/36 months)",
+        "Stakeholders": "Employer, Employee, Dependent, COBRA Administrator, DOL",
+        "Link to SN ": "SN 01, SN 02, SN 03, SN 05, SN 09",
+        "Annual Notice? (Y/N)": "No",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": "*",
+        "Other notes": "Use the DOL model election notice",
+        "URL to model template (if any)": "*"
+      }
+    },
+    "N006": {
+      "id": "N006",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N006",
+        "Name": "EBHRA Disclosure (SPD content)",
+        "Type": "Annual",
+        "Plan Type": "EBHRA",
+        "Link to AuthN": "AuthN 10",
+        "When to send Notice": "At enrollment and annually",
+        "Who receives notice": "Employee",
+        "How is notice sent": "Either",
+        "What should be in the notice": "Annual cap (indexed),  scope limits (no major medical),  confirmation group plan offered",
+        "Stakeholders": "Employer, Employee, IRS, DOL, HHS",
+        "Link to SN ": "SN 01, SN 02, SN 08, SN 09, SN 10",
+        "Annual Notice? (Y/N)": "Yes",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": "*",
+        "Other notes": "Can be embedded in SPD/SMM",
+        "URL to model template (if any)": "*"
+      }
+    },
+    "N007": {
+      "id": "N007",
+      "type": "N",
+      "source_file": "Notices or Consumer Comms .csv",
+      "attributes": {
+        "Notice Number": "N007",
+        "Name": "HIPAA Notice of Privacy Practices",
+        "Type": "Privacy",
+        "Plan Type": "All",
+        "Link to AuthN": "AuthN 08",
+        "When to send Notice": "At enrollment,  at least every 3 years,  upon material change",
+        "Who receives notice": "Employee",
+        "How is notice sent": "Either",
+        "What should be in the notice": "Uses/disclosures of PHI,  individual rights,  complaint process,  privacy officer contact",
+        "Stakeholders": "Employer, Employee, PlanAdministrator, HHS",
+        "Link to SN ": "SN 01, SN 02, SN 04, SN 10",
+        "Annual Notice? (Y/N)": "Yes",
+        "Notice Required? (Y/N)": "Yes",
+        "Consequences of not sending": NaN,
+        "Other notes": NaN,
+        "URL to model template (if any)": NaN
+      }
+    },
+    "\u00a7213(d) Medical Expenses": {
+      "id": "\u00a7213(d) Medical Expenses",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "\u00a7213(d) Medical Expenses",
+        "Definition": "Tax qualified medical expenses reimbursable by HRAs",
+        "Linked to AuthN": "AuthN 01",
+        "Other Notes": "Includes premiums, deductibles, etc, if plan allows"
+      }
+    },
+    "Affordability (2025)": {
+      "id": "Affordability (2025)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Affordability (2025)",
+        "Definition": "2025 affordability percentage used for ICHRA/\u00a74980H assessments",
+        "Linked to AuthN": "AuthN 13",
+        "Other Notes": "902% for plan years beginning in 2025"
+      }
+    },
+    "Affordability Percentage": {
+      "id": "Affordability Percentage",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Affordability Percentage",
+        "Definition": "Threshold used to determine if employer coverage/ICHRA is \u201caffordable\u201d",
+        "Linked to AuthN": "AuthN 13",
+        "Other Notes": "902% for plan years beginning in 2025"
+      }
+    },
+    "All (Plan types)": {
+      "id": "All (Plan types)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "All (Plan types)",
+        "Definition": "Applies to all HRA plan types in scope",
+        "Linked to AuthN": "*",
+        "Other Notes": "Used in N007 (HIPAA NPP)"
+      }
+    },
+    "Applicable large employer": {
+      "id": "Applicable large employer",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Applicable large employer",
+        "Definition": "The term applicable large employer means, with respect to a calendar year, an employer that employed an average of at least 50 full-time employees (including full-time equivalent employees) on business days during the preceding calendar year. ",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "Applicable large employer member": {
+      "id": "Applicable large employer member",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Applicable large employer member",
+        "Definition": "The term applicable large employer member means a person that, together with one or more other persons, is treated as a single employer that is an applicable large employer. For this purpose, if a person, together with one or more other persons, is treated as a single employer that is an applicable large employer on any day of a calendar month, that person is an applicable large employer member for that calendar month. If the applicable large employer comprises one person, that one person is the applicable large employer member. An applicable large employer member does not include a person that is not an employer or only an employer of employees with no hours of service for the calendar year. ",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "APTC": {
+      "id": "APTC",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "APTC",
+        "Definition": "Advance Premium Tax Credit that lowers Marketplace premiums for eligible individuals",
+        "Linked to AuthN": "AuthN 14",
+        "Other Notes": "Determined monthly, reconciled on tax return"
+      }
+    },
+    "Attestation": {
+      "id": "Attestation",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Attestation",
+        "Definition": "Employee\u2019s statement confirming individual/Medicare coverage for ICHRA integration",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Collected annually and/or with claims"
+      }
+    },
+    "Carryover": {
+      "id": "Carryover",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Carryover",
+        "Definition": "Employer allowed unused HRA amounts that roll into future plan years",
+        "Linked to AuthN": "AuthN 17",
+        "Other Notes": "Plan design variable"
+      }
+    },
+    "Cash out": {
+      "id": "Cash out",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Cash out",
+        "Definition": "Paying HRA amounts as cash to the employee, generally not permitted as tax free",
+        "Linked to AuthN": "AuthN17",
+        "Other Notes": "Would be taxable unless under narrow exceptions"
+      }
+    },
+    "CFR": {
+      "id": "CFR",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "CFR",
+        "Definition": "Code of Federal Regulations (codified regulations)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Cited as \u201c26 CFR \u2026\u201d or \u201c45 CFR \u2026\u201d"
+      }
+    },
+    "COBRA": {
+      "id": "COBRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRA",
+        "Definition": "Federal continuation coverage requirements for group health plans, including HRAs",
+        "Linked to AuthN": "AuthN 05",
+        "Other Notes": "Excise tax applies for failures (AuthN 04)"
+      }
+    },
+    "COBRA Continuation Coverage": {
+      "id": "COBRA Continuation Coverage",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRA Continuation Coverage",
+        "Definition": "Temporary extension of coverage after a qualifying event",
+        "Linked to AuthN": "AuthN 05",
+        "Other Notes": "Premiums often 102% of cost"
+      }
+    },
+    "COBRA Election Notice": {
+      "id": "COBRA Election Notice",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRA Election Notice",
+        "Definition": "Detailed notice of rights, timing, premiums, and how to elect COBRA",
+        "Linked to AuthN": "AuthN 07",
+        "Other Notes": "14 day/44 day administrative timing rules"
+      }
+    },
+    "COBRA Excise Tax": {
+      "id": "COBRA Excise Tax",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRA Excise Tax",
+        "Definition": "Tax penalty for COBRA failures",
+        "Linked to AuthN": "AuthN 04",
+        "Other Notes": "Separate from ERISA enforcement"
+      }
+    },
+    "COBRA General Framework": {
+      "id": "COBRA General Framework",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRA General Framework",
+        "Definition": "ERISA statutory basis for COBRA continuation coverage",
+        "Linked to AuthN": "AuthN 05",
+        "Other Notes": "See election notice details in AuthN 07"
+      }
+    },
+    "COBRA General Notice": {
+      "id": "COBRA General Notice",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRA General Notice",
+        "Definition": "Initial COBRA rights notice often provided at plan commencement",
+        "Linked to AuthN": "AuthN 06",
+        "Other Notes": "Distinct from the election notice"
+      }
+    },
+    "COBRAAdministrator": {
+      "id": "COBRAAdministrator",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "COBRAAdministrator",
+        "Definition": "Party administering COBRA notices, elections, and payments",
+        "Linked to AuthN": "*",
+        "Other Notes": "May be same as PlanAdministrator"
+      }
+    },
+    "Coinsurance": {
+      "id": "Coinsurance",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Coinsurance",
+        "Definition": "Percentage of cost paid after deductible",
+        "Linked to AuthN": "*",
+        "Other Notes": "A form of cost sharing"
+      }
+    },
+    "Copay": {
+      "id": "Copay",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Copay",
+        "Definition": "Fixed amount paid per service",
+        "Linked to AuthN": "*",
+        "Other Notes": "A form of cost sharing"
+      }
+    },
+    "Deductible": {
+      "id": "Deductible",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Deductible",
+        "Definition": "Amount paid by enrollee before plan pays",
+        "Linked to AuthN": "*",
+        "Other Notes": "Relevant to HDHP/HSA compatibility"
+      }
+    },
+    "Dependent": {
+      "id": "Dependent",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Dependent",
+        "Definition": "Spouse/child of participant who may have HRA rights (eg, COBRA)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Each dependent may be a QB"
+      }
+    },
+    "DOL": {
+      "id": "DOL",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "DOL",
+        "Definition": "US Department of Labor (ERISA/Cobra enforcement)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Publishes COBRA regulations and models"
+      }
+    },
+    "EBHRA": {
+      "id": "EBHRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "EBHRA",
+        "Definition": "\u201cExcepted benefit\u201d HRA offered alongside a group plan, capped annually and cannot reimburse non excepted major medical",
+        "Linked to AuthN": "AuthN 10",
+        "Other Notes": "2025 cap is $2,150 (see EBHRA cap)"
+      }
+    },
+    "EBHRA Cap (Annual)": {
+      "id": "EBHRA Cap (Annual)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "EBHRA Cap (Annual)",
+        "Definition": "Annual maximum new credit for EBHRA (indexed)",
+        "Linked to AuthN": "AuthN 15",
+        "Other Notes": "$2,150 for plan years beginning in 2025"
+      }
+    },
+    "Election Window (COBRA)": {
+      "id": "Election Window (COBRA)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Election Window (COBRA)",
+        "Definition": "Time period for QBs to elect COBRA after receiving an election notice",
+        "Linked to AuthN": "AuthN 07",
+        "Other Notes": "Minimum 60 days"
+      }
+    },
+    "Employee": {
+      "id": "Employee",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Employee",
+        "Definition": "Participant eligible for HRA reimbursements. The term employee includes every individual performing services if the relationship between him and the person for whom he performs such services is the legal relationship of employer and employee. The term includes officers and employees, whether elected or appointed, of the United States, a State, Territory, Puerto Rico, or any political subdivision thereof, or the District of Columbia, or any agency or instrumentality of any one or more of the foregoing. Per 26 CFR 54.4980H-1(a)(15), a leased employee (as defined in section 414(n)(2)), a sole proprietor, a partner in a partnership, a 2-percent S corporation shareholder, or a worker described in section 3508 is not an employee.\n\n",
+        "Linked to AuthN": "AuthN 23, AuthN 24",
+        "Other Notes": "APTC interactions depend on HRA type"
+      }
+    },
+    "Employer": {
+      "id": "Employer",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Employer",
+        "Definition": "Plan sponsor responsible for HRA design, funding, and compliance. The term employer means the person that is the employer of an employee under the common-law standard. For purposes of determining whether an employer is an applicable large employer, all persons treated as a single employer under section 414(b), (c), (m), or (o) are treated as a single employer. Thus, all employees of a controlled group of entities under section 414(b) or (c), an affiliated service group under section 414(m), or an entity in an arrangement described under section 414(o), are taken into account in determining whether the members of the controlled group or affiliated service group together are an applicable large employer. For purposes of determining applicable large employer status, the term employer also includes a predecessor employer (see paragraph (a)(36) of this section) and a successor employer.",
+        "Linked to AuthN": "AuthN 25",
+        "Other Notes": "Includes ALEs and small employers"
+      }
+    },
+    "Excepted Benefits": {
+      "id": "Excepted Benefits",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Excepted Benefits",
+        "Definition": "Categories of limited scope benefits (eg, dental/vision) outside major medical rules",
+        "Linked to AuthN": "AuthN10",
+        "Other Notes": "EBHRA must remain within excepted benefits scope"
+      }
+    },
+    "Federal Poverty Line (FPL)": {
+      "id": "Federal Poverty Line (FPL)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Federal Poverty Line (FPL)",
+        "Definition": "Federal measure of income used in affordability and PTC calculations The term federal poverty line means for a plan year any of the poverty guidelines (updated periodically in the Federal Register) in effect within six months before the first day of the plan year of the applicable large employer member's health plan, as selected by the applicable large employer member.",
+        "Linked to AuthN": "AuthN 14",
+        "Other Notes": "Indexed annually, varies by household size"
+      }
+    },
+    "FinalRule": {
+      "id": "FinalRule",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "FinalRule",
+        "Definition": "Final version of a rulemaking as published in the Federal Register (FR)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, 84 FR 28888 (2019)"
+      }
+    },
+    "FPL Safe Harbor": {
+      "id": "FPL Safe Harbor",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "FPL Safe Harbor",
+        "Definition": "Uses Federal Poverty Line to set a fixed affordable employee contribution cap",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Simplifies administration"
+      }
+    },
+    "FR": {
+      "id": "FR",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "FR",
+        "Definition": "Federal Register (daily rulemaking publication)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Cited as \u201c84 FR 28888\u201d"
+      }
+    },
+    "Full-time equivalent employee (FTE)": {
+      "id": "Full-time equivalent employee (FTE)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Full-time equivalent employee (FTE)",
+        "Definition": "The term full-time equivalent employee, or FTE, means a combination of employees, each of whom individually is not treated as a full-time employee because he or she is not employed on average at least 30 hours of service per week with an employer, who, in combination, are counted as the equivalent of a full-time employee solely for purposes of determining whether the employer is an applicable large employer",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "Group Health Plan (GHP)": {
+      "id": "Group Health Plan (GHP)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Group Health Plan (GHP)",
+        "Definition": "Employer sponsored group health coverage",
+        "Linked to AuthN": "AuthN 11",
+        "Other Notes": "Integration pathway for traditional HRAs/EBHRAs"
+      }
+    },
+    "HDHP": {
+      "id": "HDHP",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HDHP",
+        "Definition": "High Deductible Health Plan meeting HSA thresholds",
+        "Linked to AuthN": "*",
+        "Other Notes": "Required for HSA contributions"
+      }
+    },
+    "HHS": {
+      "id": "HHS",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HHS",
+        "Definition": "US Department of Health and Human Services (ACA/HIPAA)",
+        "Linked to AuthN": "*",
+        "Other Notes": "CMS/CCIIO operate Exchanges"
+      }
+    },
+    "HIPAA": {
+      "id": "HIPAA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HIPAA",
+        "Definition": "Federal health information privacy/security framework",
+        "Linked to AuthN": "AuthN 08",
+        "Other Notes": "Privacy Notice (NPP) required"
+      }
+    },
+    "HIPAA NPP": {
+      "id": "HIPAA NPP",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HIPAA NPP",
+        "Definition": "HIPAA Notice of Privacy Practices describing uses/rights and contacts",
+        "Linked to AuthN": "AuthN 08",
+        "Other Notes": "Must be furnished at set intervals"
+      }
+    },
+    "HIPAA Privacy Rule": {
+      "id": "HIPAA Privacy Rule",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HIPAA Privacy Rule",
+        "Definition": "Federal regulations governing PHI use/disclosure and individual rights",
+        "Linked to AuthN": "AuthN 08",
+        "Other Notes": "Requires NPP and privacy contact"
+      }
+    },
+    "Hour of Service": {
+      "id": "Hour of Service",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Hour of Service",
+        "Definition": "An hour of service is: (1) Each hour for which an employee is paid, or entitled to payment, for the performance of duties for the employer, and (2) Each hour for which an employee is paid, or entitled to payment by the employer for a period of time during which no duties are performed due to vacation, holiday, illness, incapacity (including disability), layoff, jury duty, military duty or leave of absence.",
+        "Linked to AuthN": NaN,
+        "Other Notes": NaN
+      }
+    },
+    "Household Income": {
+      "id": "Household Income",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Household Income",
+        "Definition": "Income definition underpinning affordability and PTC, safe harbors approximate it for employers",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Employees use actual income for PTC"
+      }
+    },
+    "HRA": {
+      "id": "HRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HRA",
+        "Definition": "Employer funded arrangement that reimburses \u00a7213(d) medical expenses, not a bank account but an employer promise to reimburse",
+        "Linked to AuthN": "AuthN 17",
+        "Other Notes": "May allow carryover, requires substantiation"
+      }
+    },
+    "HSA": {
+      "id": "HSA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "HSA",
+        "Definition": "Health Savings Account, tax favored account paired with HDHP",
+        "Linked to AuthN": "*",
+        "Other Notes": "Limited purpose/post deductible HRAs preserve HSA eligibility"
+      }
+    },
+    "ICHRA": {
+      "id": "ICHRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "ICHRA",
+        "Definition": "HRA that must be integrated with individual market coverage or Medicare, requires annual coverage attestation and an opt out",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Affordability affects APTC eligibility"
+      }
+    },
+    "Individual Coverage": {
+      "id": "Individual Coverage",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Individual Coverage",
+        "Definition": "Non group health insurance (on/off Exchange) that meets integration conditions for ICHRA",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Requires annual attestation"
+      }
+    },
+    "Integration (Group)": {
+      "id": "Integration (Group)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Integration (Group)",
+        "Definition": "Satisfying ACA reforms by pairing an HRA with a group plan for enrolled participants",
+        "Linked to AuthN": "AuthN 11",
+        "Other Notes": "Requires actual enrollment in the group plan"
+      }
+    },
+    "Integration (Individual/Medicare)": {
+      "id": "Integration (Individual/Medicare)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Integration (Individual/Medicare)",
+        "Definition": "ICHRA rules that tie HRA use to individual market or Medicare coverage",
+        "Linked to AuthN": "AuthN09",
+        "Other Notes": "Requires opt out and affordability logic"
+      }
+    },
+    "IRS": {
+      "id": "IRS",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "IRS",
+        "Definition": "US Internal Revenue Service (tax administration)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Issues Rev Procs/Notices, Pub 974"
+      }
+    },
+    "IssuerCarrier": {
+      "id": "IssuerCarrier",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "IssuerCarrier",
+        "Definition": "Insurance company offering policies reimbursed by HRAs",
+        "Linked to AuthN": "*",
+        "Other Notes": "Receives ICHRA premium payments"
+      }
+    },
+    "Limited Purpose HRA": {
+      "id": "Limited Purpose HRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Limited Purpose HRA",
+        "Definition": "HRA limited to dental/vision (excepted benefits), often paired with HSAs",
+        "Linked to AuthN": "AuthN 17",
+        "Other Notes": "HSA compatible"
+      }
+    },
+    "Marketplace": {
+      "id": "Marketplace",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Marketplace",
+        "Definition": "ACA Exchange that determines QHP certification and APTC eligibility",
+        "Linked to AuthN": "AuthN 14",
+        "Other Notes": "Also called \u201cExchange\u201d"
+      }
+    },
+    "MEC": {
+      "id": "MEC",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "MEC",
+        "Definition": "Minimum Essential Coverage required for favorable tax treatment and QSEHRA reimbursements",
+        "Linked to AuthN": "AuthN 14",
+        "Other Notes": "Proof of MEC required for QSEHRA"
+      }
+    },
+    "Medicare": {
+      "id": "Medicare",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Medicare",
+        "Definition": "Federal health insurance, primarily for age 65+ and certain disabled groups",
+        "Linked to AuthN": "*",
+        "Other Notes": "ICHRA may integrate with Medicare"
+      }
+    },
+    "Medigap": {
+      "id": "Medigap",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Medigap",
+        "Definition": "Medicare Supplement insurance",
+        "Linked to AuthN": "*",
+        "Other Notes": "Often reimbursable by retiree HRAs"
+      }
+    },
+    "Minimum Essential Coverage (MEC)": {
+      "id": "Minimum Essential Coverage (MEC)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Minimum Essential Coverage (MEC)",
+        "Definition": "In general The term \u201cminimum essential coverage\u201d means any of the following: (A) Government sponsored programs Coverage under\u2014 (i) the Medicare program under part A of title XVIII of the Social Security Act, (ii) the Medicaid program under title XIX of the Social Security Act, (iii) the CHIP program under title XXI of the Social Security Act or under a qualified CHIP look-alike program (as defined in section 2107(g) of the Social Security Act), (iv) medical coverage under chapter 55 of title 10, United States Code , including coverage under the TRICARE program; (v) a health care program under chapter 17 or 18 of title 38 , United States Code , as determined by the Secretary of Veterans Affairs, in coordination with the Secretary of Health and Human Services and the Secretary, (vi) a health plan under section 2504(e) of title 22 , United States Code (relating to Peace Corps volunteers); 2 or (vii) the Nonappropriated Fund Health Benefits Program of the Department of Defense, established under section 349 of the National Defense Authorization Act for Fiscal Year 1995 ( Public Law 103\u2013337 ; 10 U.S.C. 1587 note). (B) Employer-sponsored plan Coverage under an eligible employer-sponsored plan. (C) Plans in the individual market Coverage under a health plan offered in the individual market within a State. (D) Grandfathered health plan Coverage under a grandfathered health plan. (E) Other coverage Such other health benefits coverage, such as a State health benefits risk pool, as the Secretary of Health and Human Services, in coordination with the Secretary, recognizes for purposes of this subsection.",
+        "Linked to AuthN": "AuthN 26",
+        "Other Notes": NaN
+      }
+    },
+    "Minimum Value": {
+      "id": "Minimum Value",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Minimum Value",
+        "Definition": "Group plan actuarial value \u2265 60%",
+        "Linked to AuthN": "AuthN 11",
+        "Other Notes": "Relevant when integrating HRAs with group plans"
+      }
+    },
+    "Model Notice": {
+      "id": "Model Notice",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Model Notice",
+        "Definition": "Government published template to help satisfy notice content standards",
+        "Linked to AuthN": "AuthN 07",
+        "Other Notes": "DOL provides COBRA/ICHRA models"
+      }
+    },
+    "Monthly Equivalency (Full-time employees)": {
+      "id": "Monthly Equivalency (Full-time employees)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Monthly Equivalency (Full-time employees)",
+        "Definition": "For a full time employee, 130 hours of service in a calendar month is treated as the monthly equivalent of at least 30 hours of service per week, and this 130 hours of service monthly equivalency applies for both the look-back measurement method and the monthly measurement method for determining full-time employee status.",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "Monthly Measurement rule for full time employees": {
+      "id": "Monthly Measurement rule for full time employees",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Monthly Measurement rule for full time employees",
+        "Definition": "Full-time employee status for certain calendar months is based on hours of service over four weekly periods and for certain other calendar months is based on hours of service over five weekly periods. With respect to a month with four weekly periods, an employee with at least 120 hours of service is a full-time employee, and with respect to a month with five weekly periods, an employee with at least 150 hours of service is a full-time employee. For purposes of this rule, the seven continuous calendar days that constitute a week (for example Sunday through Saturday) must be consistently applied for all calendar months of the calendar year.",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "Notice (IRS)": {
+      "id": "Notice (IRS)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Notice (IRS)",
+        "Definition": "Sub regulatory guidance with binding/interpretive effect",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, Notice 2017 67 (QSEHRA)"
+      }
+    },
+    "Opt out (ICHRA)": {
+      "id": "Opt out (ICHRA)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Opt out (ICHRA)",
+        "Definition": "Employee election to decline an ICHRA to remain APTC eligible if ICHRA is unaffordable",
+        "Linked to AuthN": "AuthN09",
+        "Other Notes": "Must be offered annually"
+      }
+    },
+    "Part-Time Employee": {
+      "id": "Part-Time Employee",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Part-Time Employee",
+        "Definition": "The term part-time employee means a new employee who the applicable large employer member reasonably expects to be employed on average less than 30 hours of service per week during the initial measurement period, based on the facts and circumstances at the employee's start date. Whether an employer's determination that a new employee is a part-time employee is reasonable is based on the facts and circumstances at the employee's start date.",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "PHI": {
+      "id": "PHI",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "PHI",
+        "Definition": "Protected Health Information regulated by HIPAA",
+        "Linked to AuthN": "AuthN 08",
+        "Other Notes": "Plan documents must include privacy rules"
+      }
+    },
+    "PlanAdministrator": {
+      "id": "PlanAdministrator",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "PlanAdministrator",
+        "Definition": "Party administering claims, substantiation, notices, and appeals",
+        "Linked to AuthN": "*",
+        "Other Notes": "Often a TPA"
+      }
+    },
+    "Plan year": {
+      "id": "Plan year",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Plan year",
+        "Definition": "A plan year must be twelve consecutive months, unless a short plan year of less than twelve consecutive months is permitted for a valid business purpose. A plan year is permitted to begin on any day of a year and must end on the preceding day in the immediately following year (for example, a plan year that begins on October 15, 2015, must end on October 14, 2016). A calendar year plan year is a period of twelve consecutive months beginning on January 1 and ending on December 31 of the same calendar year. Once established, a plan year is effective for the first plan year and for all subsequent plan years, unless changed, provided that such change will only be recognized if made for a valid business purpose. A change in the plan year is not permitted if a principal purpose of the change in plan year is to circumvent the rules of section 4980H or these regulations.",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "Post Deductible HRA": {
+      "id": "Post Deductible HRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Post Deductible HRA",
+        "Definition": "HRA that pays only after the HDHP statutory deductible is met (HSA compatible)",
+        "Linked to AuthN": "AuthN 17",
+        "Other Notes": "Preserves HSA eligibility"
+      }
+    },
+    "Premium": {
+      "id": "Premium",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Premium",
+        "Definition": "Amount paid for insurance coverage",
+        "Linked to AuthN": "*",
+        "Other Notes": "Can be reimbursed under many HRA types"
+      }
+    },
+    "Privacy Officer": {
+      "id": "Privacy Officer",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Privacy Officer",
+        "Definition": "Contact designated for HIPAA privacy inquiries/complaints",
+        "Linked to AuthN": "AuthN 08",
+        "Other Notes": "Listed in the NPP"
+      }
+    },
+    "PTC": {
+      "id": "PTC",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "PTC",
+        "Definition": "Premium Tax Credit (annual), APTC is the advance payment during the year",
+        "Linked to AuthN": "AuthN 14",
+        "Other Notes": "Reconciled against final PTC"
+      }
+    },
+    "Publication (IRS)": {
+      "id": "Publication (IRS)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Publication (IRS)",
+        "Definition": "Non binding explanatory document for taxpayers/practitioners",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, Pub 974 (PTC)"
+      }
+    },
+    "QSEHRA": {
+      "id": "QSEHRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "QSEHRA",
+        "Definition": "Small employer HRA (no group plan allowed) with statutory annual caps, requires MEC for tax free treatment",
+        "Linked to AuthN": NaN,
+        "Other Notes": "Operational details in AuthN 19, 2025 caps in AuthN 16"
+      }
+    },
+    "QSEHRA Caps (Annual)": {
+      "id": "QSEHRA Caps (Annual)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "QSEHRA Caps (Annual)",
+        "Definition": "Statutory maximum reimbursements (self/family) indexed annually",
+        "Linked to AuthN": "AuthN16",
+        "Other Notes": "$6,350 / $12,800 for 2025"
+      }
+    },
+    "Qualified Beneficiary (QB)": {
+      "id": "Qualified Beneficiary (QB)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Qualified Beneficiary (QB)",
+        "Definition": "Individual entitled to COBRA (covered employee/spouse/dependent) at time of QE",
+        "Linked to AuthN": "AuthN 05",
+        "Other Notes": "Each QB elects separately"
+      }
+    },
+    "Qualified Health Plan (QHP)": {
+      "id": "Qualified Health Plan (QHP)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Qualified Health Plan (QHP)",
+        "Definition": "Marketplace plan certified by an Exchange",
+        "Linked to AuthN": "AuthN14",
+        "Other Notes": "Used with APTC eligibility"
+      }
+    },
+    "Qualifying Event (COBRA)": {
+      "id": "Qualifying Event (COBRA)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Qualifying Event (COBRA)",
+        "Definition": "Trigger such as termination or reduction in hours that grants COBRA rights",
+        "Linked to AuthN": "AuthN 05",
+        "Other Notes": "Drives election timing"
+      }
+    },
+    "Rate of Pay Safe Harbor": {
+      "id": "Rate of Pay Safe Harbor",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Rate of Pay Safe Harbor",
+        "Definition": "Uses hourly rate \u00d7 130 hours (or monthly salary) to assess affordability",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Helpful for hourly staff"
+      }
+    },
+    "Regulation": {
+      "id": "Regulation",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Regulation",
+        "Definition": "Binding agency rule codified in the Code of Federal Regulations (CFR)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, 26 CFR 549802 4"
+      }
+    },
+    "Retiree Only HRA": {
+      "id": "Retiree Only HRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Retiree Only HRA",
+        "Definition": "HRA offered only to retirees, generally exempt from ACA market reforms, COBRA often applies",
+        "Linked to AuthN": "AuthN 17",
+        "Other Notes": "Months a retiree only HRA is provided block APTC"
+      }
+    },
+    "RevProc": {
+      "id": "RevProc",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "RevProc",
+        "Definition": "Revenue Procedure\u2014administrative procedures and annual indices/caps",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, affordability %, EBHRA/QSEHRA caps"
+      }
+    },
+    "Ruling (Rev Rul)": {
+      "id": "Ruling (Rev Rul)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Ruling (Rev Rul)",
+        "Definition": "Revenue Ruling\u2014IRS interpretation applied to specific fact patterns",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, Rev Rul 2002 41"
+      }
+    },
+    "Safe Harbor (General)": {
+      "id": "Safe Harbor (General)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Safe Harbor (General)",
+        "Definition": "Permitted method to estimate \u201chousehold income\u201d for affordability (W 2, Rate of Pay, FPL)",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Employers choose one per class"
+      }
+    },
+    "Seasonal Employee": {
+      "id": "Seasonal Employee",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Seasonal Employee",
+        "Definition": "The term seasonal employee means an employee who is hired into a position for which the customary annual employment is six months or less.",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": NaN
+      }
+    },
+    "Seasonal Worker": {
+      "id": "Seasonal Worker",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Seasonal Worker",
+        "Definition": "The term seasonal worker means a worker who performs labor or services on a seasonal basis as defined by the Secretary of Labor, including (but not limited to) workers covered by 29 CFR 500.20(s)(1), and retail workers employed exclusively during holiday seasons. Employers may apply a reasonable, good faith interpretation of the term seasonal worker and a reasonable good faith interpretation of 29 CFR 500.20(s)(1) (including as applied by analogy to workers and employment positions not otherwise covered under 29 CFR 500.20(s)(1)).",
+        "Linked to AuthN": "AuthN 23",
+        "Other Notes": "DOL regulations state labor is performed on a seasonal basis where, ordinarily, the employment pertains to or is of the kind exclusively performed at certain seasons or periods of the year and which, from its nature, may not be continuous or carried on throughout the year. A worker who moves from one seasonal activity to another, while employed in agriculture or performing agricultural labor, is employed on a seasonal basis even though he may continue to be employed during a major portion of the year."
+      }
+    },
+    "SMM": {
+      "id": "SMM",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "SMM",
+        "Definition": "Summary of Material Modifications that updates the SPD when changes occur",
+        "Linked to AuthN": "*",
+        "Other Notes": "Timing rules under ERISA"
+      }
+    },
+    "SPD": {
+      "id": "SPD",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "SPD",
+        "Definition": "Summary Plan Description detailing plan terms for participants",
+        "Linked to AuthN": "*",
+        "Other Notes": "EBHRA disclosures can live in the SPD"
+      }
+    },
+    "Special Enrollment Period (SEP)": {
+      "id": "Special Enrollment Period (SEP)",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Special Enrollment Period (SEP)",
+        "Definition": "Time limited window to enroll in Marketplace coverage outside open enrollment",
+        "Linked to AuthN": "AuthN 14",
+        "Other Notes": "ICHRA initial notice aligns with SEPs"
+      }
+    },
+    "Statute": {
+      "id": "Statute",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Statute",
+        "Definition": "Law enacted by Congress and codified in the US Code (USC)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Eg, 26 USC \u00a7 105, \u00a7 9831(d)"
+      }
+    },
+    "STLDI": {
+      "id": "STLDI",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "STLDI",
+        "Definition": "Short Term, Limited Duration Insurance, limited non ACA coverage sometimes reimbursable by EBHRAs",
+        "Linked to AuthN": "AuthN10",
+        "Other Notes": "Subject to conditions, check small employer nuances"
+      }
+    },
+    "Substantiation": {
+      "id": "Substantiation",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Substantiation",
+        "Definition": "Third party verification of expenses before reimbursement (receipts/EOBs)",
+        "Linked to AuthN": "AuthN 17",
+        "Other Notes": "Self certification is not sufficient"
+      }
+    },
+    "Traditional Integrated HRA": {
+      "id": "Traditional Integrated HRA",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "Traditional Integrated HRA",
+        "Definition": "HRA integrated with an employer group health plan to satisfy ACA market reforms",
+        "Linked to AuthN": "AuthN 11",
+        "Other Notes": "Participants must be enrolled in the group plan"
+      }
+    },
+    "USC": {
+      "id": "USC",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "USC",
+        "Definition": "United States Code (codified statutes)",
+        "Linked to AuthN": "*",
+        "Other Notes": "Cited as \u201c26 USC \u00a7 \u2026\u201d"
+      }
+    },
+    "W 2 Safe Harbor": {
+      "id": "W 2 Safe Harbor",
+      "type": "Term",
+      "source_file": "Definitions.csv",
+      "attributes": {
+        "Term": "W 2 Safe Harbor",
+        "Definition": "Uses prior year Box 1 W 2 wages to assess affordability",
+        "Linked to AuthN": "AuthN 09",
+        "Other Notes": "Common for salaried staff"
+      }
+    },
+    "EMPL 01": {
+      "id": "EMPL 01",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 01",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Full time",
+        "Description": "A full-time employee is, for a calendar month, an employee employed on average at least 30 hours of service per week, or 130 hours of service per month.  Uses either the definition that applies for purposes of Code section 105(h) or 4980H, as determined by the plan sponsor",
+        "Linked to AuthN": "AuthN 03, Auth N 09, AuthN 23",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "Yes. the minimum class size requirement applies only to those classes (and the classes are only applicable classes) if the employees in one such class are offered a traditional group health plan while the employees in the other such class are offered an individual coverage HRA. In such a case, the minimum class size requirement applies only to the class offered an individual coverage HRA.",
+        "Impact on PTC": "If the ICHRA is affordable, no APTC. If the ICHRA is unaffordable AND the employee opted out, then APTC may be possible ",
+        "Notes ": "Applicable class. If the ICHRA is offered to former employees, former employees are considered to be in the same class in which they were included immediately before separation from service"
+      }
+    },
+    "EMPL 02": {
+      "id": "EMPL 02",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 02",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Part time ",
+        "Description": "Uses either the definition that applies for purposes of Code section 105(h) or 4980H, as determined by the plan sponsor",
+        "Linked to AuthN": "AuthN 03, AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "Yes. the minimum class size requirement applies only to those classes (and the classes are only applicable classes) if the employees in one such class are offered a traditional group health plan while the employees in the other such class are offered an individual coverage HRA. In such a case, the minimum class size requirement applies only to the class offered an individual coverage HRA.",
+        "Impact on PTC": "Standard ICHRA affordability and opt-out logic",
+        "Notes ": "Applicable class. If the ICHRA is offered to former employees, former employees are considered to be in the same class in which they were included immediately before separation from service"
+      }
+    },
+    "EMPL 03": {
+      "id": "EMPL 03",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 03",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Seasonal",
+        "Description": "Defined at the election of the plan sponsor to mean seasonal employees. This can be either  an employee who is hired into a position for which the customary annual employment is six months or less (26 CFR 54.4980H-1(a)(38)) or employees whose customary annual employment is less than 9 months, if other employees in similar work with the same employer (or, if no employees of the employer are in similar work, in similar work in the same industry and location) have substantially more months (26 CFR 1.105-11(c)(2)(iii)(C))",
+        "Linked to AuthN": "AuthN 03, AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "NO",
+        "Impact on PTC": "Standard ICHRA affordability and opt-out logic",
+        "Notes ": NaN
+      }
+    },
+    "EMPL 04": {
+      "id": "EMPL 04",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 04",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Covered by Collective Bargaining Agreement ",
+        "Description": "Employees who are included in a unit of employees covered by an agreement between employee representatives and one or more employers which the Commissioner finds to be a collective bargaining agreement, if accident and health benefits were the subject of good faith bargaining between such employee representatives and such employer or employers",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "NO",
+        "Impact on PTC": "The CBA may impact these, but standard ICHRA criteria apply",
+        "Notes ": NaN
+      }
+    },
+    "EMPL 05": {
+      "id": "EMPL 05",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 05",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Waiting Period",
+        "Description": "Employees who have not satisfied a waiting period for coverage. A waiting period is the period that must pass before coverage for an individual who is otherwise eligible to enroll under the terms of a group health plan can become effective.",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "NO",
+        "Impact on PTC": "AFTER employee  is eligible, standard ICHRA rules apply",
+        "Notes ": NaN
+      }
+    },
+    "EMPL 06": {
+      "id": "EMPL 06",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 06",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Temporary Placement",
+        "Description": "Employees who, under all the facts and circumstances, are employees of an entity that hired the employees for temporary placement at an entity that is not the common law employer of the employees and that is not treated as a single employer with the entity that hired the employees for temporary placement under section 414(b), (c), (m), or (o); or",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "NO",
+        "Impact on PTC": "Depends on sponsor - If applicable, standard ICHRA rules apply",
+        "Notes ": NaN
+      }
+    },
+    "EMPL 07": {
+      "id": "EMPL 07",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 07",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Foreign, working abroad",
+        "Description": "Non-resident aliens with no U.S.-based income",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "NO",
+        "Impact on PTC": "Usually ineligible for PTC, but eligibility depends on immigration status, tax/residency status",
+        "Notes ": NaN
+      }
+    },
+    "EMPL 08": {
+      "id": "EMPL 08",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 08",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Rating Area",
+        "Description": "Employees whose primary site of employment is in the same rating area. Rating areas are on the following geographic boundaries: Counties, three-digit zip codes, or metropolitan statistical areas and non-metropolitan statistical areas, as defined by the Office of Management and Budget (refer to 45 CFR 147.102(b))",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "Yes. However, the minimum class size requirement does not apply if the geographic area defining the class is a State or a combination of two or more entire States",
+        "Impact on PTC": "Rating areas impact the benchmark premium",
+        "Notes ": "Applicable class. If the ICHRA is offered to former employees, former employees are considered to be in the same class in which they were included immediately before separation from service"
+      }
+    },
+    "EMPL 09": {
+      "id": "EMPL 09",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 09",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Salaried Employees ",
+        "Description": "Employees who are paid on a salary basis",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "Yes",
+        "Impact on PTC": "Depends on affordability safe harbor (W2, Rate of Pay, or FPL)",
+        "Notes ": "Applicable class. If the ICHRA is offered to former employees, former employees are considered to be in the same class in which they were included immediately before separation from service"
+      }
+    },
+    "EMPL 10": {
+      "id": "EMPL 10",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 10",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Non-salaried Employees",
+        "Description": "Not paid a salary (such as hourly employees)",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "Yes",
+        "Impact on PTC": "Rate of pay test uses hourly rate time 130 hours per month ",
+        "Notes ": "Applicable class. If the ICHRA is offered to former employees, former employees are considered to be in the same class in which they were included immediately before separation from service"
+      }
+    },
+    "EMPL 11": {
+      "id": "EMPL 11",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 11",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "Dependents (Child or Spouse)",
+        "Description": "Related to employee, family members who may be eligible for reimbursements and COBRA",
+        "Linked to AuthN": "AuthN 05, AuthN 07, AuthN 09, AuthN 14",
+        "Eligible for ICHRA?": "NO - This is not a class",
+        "Minimum Class Size applies?": "NO",
+        "Impact on PTC": "Similar affordability rules, but for family premiums (aka family affordability will impact eligibility for PTC). These dependents will also be qualified beneficiaries for COBRA",
+        "Notes ": "Not an ICHRA class, but we should know for notice impacts "
+      }
+    },
+    "EMPL 12": {
+      "id": "EMPL 12",
+      "type": "EMPL",
+      "source_file": "Employee.csv",
+      "attributes": {
+        "EmployeeN": "EMPL 12",
+        "Employee status (AS DETERMINED BY EMPLOYER)": "New Hire",
+        "Description": "Special Rule - Those employees who were hired on or after a certain date are ICHRA eligible, others who started earlier keep the traditional plan",
+        "Linked to AuthN": "AuthN 09",
+        "Eligible for ICHRA?": "YES",
+        "Minimum Class Size applies?": "NO. This group is exempt",
+        "Impact on PTC": "Standard ICHRA affordability and opt-out logic",
+        "Notes ": NaN
+      }
+    },
+    "HPN 01": {
+      "id": "HPN 01",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 01",
+        "Type": "Traditional Integrated HRA",
+        "Linked to Auth N": "AuthN 11, AuthN 18, AuthN 27, AuthN 28",
+        "Description": "Classic HRA integrated with group coverage",
+        "Reimbursements": "Group premiums, cost sharing, \u00a7213(d)",
+        "Cash Out": "No",
+        "COBRA ": "Yes",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, COBRA Administrator, IRS, DOL, HHS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 05, SN 8, SN 09, SN 10",
+        "Link to HRA& PTC": "LinkN01",
+        "Other Notes": NaN
+      }
+    },
+    "HPN 02": {
+      "id": "HPN 02",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 02",
+        "Type": "ICHRA",
+        "Linked to Auth N": "AuthN 03, AuthN 09, AuthN 03, AuthN 27, AuthN 28",
+        "Description": "HRA integrated with individual coverage or Medicare",
+        "Reimbursements": "Individual/Medicare premiums, \u00a7213(d) (if allowed)",
+        "Cash Out": "No",
+        "COBRA ": "Yes",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes (annual attestation)",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, Issuer Carrier, Marketplace, IRS, DOL, HHS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 06, SN 8, SN 09, SN 10",
+        "Link to HRA& PTC": "LinkN 02",
+        "Other Notes": "Opt out must be offered, affects APTC"
+      }
+    },
+    "HPN 03": {
+      "id": "HPN 03",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 03",
+        "Type": "EBHRA",
+        "Linked to Auth N": "AuthN 10, AuthN 15, AuthN 27, AuthN 28",
+        "Description": "Excepted benefit HRA, cannot reimburse major medical",
+        "Reimbursements": "Dental/vision, COBRA, STLDI, limited benefits",
+        "Cash Out": "No",
+        "COBRA ": "Yes",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, COBRA Administrator, IRS, DOL, HHS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 05, SN 8, SN 09, SN 10",
+        "Link to HRA& PTC": "LinkN 03",
+        "Other Notes": "2025 cap = $2,150, group plan must be offered"
+      }
+    },
+    "HPN 04": {
+      "id": "HPN 04",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 04",
+        "Type": "QSEHRA",
+        "Linked to Auth N": "AuthN 02, AuthN 03, AuthN 19, AuthN 16, AuthN 27, AuthN 28",
+        "Description": "Small employer HRA (no group plan allowed)",
+        "Reimbursements": "Individual premiums, \u00a7213(d)",
+        "Cash Out": "No",
+        "COBRA ": "No",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes (MEC proof)",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, Marketplace, IRS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 07, SN 08",
+        "Link to HRA& PTC": "LinkN 04",
+        "Other Notes": "2025 caps = $6,350/$12,800, annual notice"
+      }
+    },
+    "HPN 05": {
+      "id": "HPN 05",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 05",
+        "Type": "Retiree Only HRA",
+        "Linked to Auth N": "AuthN 17, AuthN 27, AuthN 28",
+        "Description": "Retiree only plan, ACA market reforms exempt",
+        "Reimbursements": "Medicare premiums, Medigap, \u00a7213(d)",
+        "Cash Out": "No",
+        "COBRA ": "Yes",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, IRS, DOL, HHS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 08, SN 09, SN 10",
+        "Link to HRA& PTC": "LinkN 05",
+        "Other Notes": "COBRA generally applies, APTC blocked when retiree only HRA is provided"
+      }
+    },
+    "HPN 06": {
+      "id": "HPN 06",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 06",
+        "Type": "Limited Purpose HRA",
+        "Linked to Auth N": "AuthN 17, AuthN 27, AuthN 28",
+        "Description": "Dental/vision only (often HSA compatible)",
+        "Reimbursements": "Dental, vision",
+        "Cash Out": "No",
+        "COBRA ": "Yes",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, IRS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 08",
+        "Link to HRA& PTC": "LinkN 06",
+        "Other Notes": "Preserves HSA eligibility"
+      }
+    },
+    "HPN 07": {
+      "id": "HPN 07",
+      "type": "HPN",
+      "source_file": "HRA Types.csv",
+      "attributes": {
+        "HRA Plan Number": "HPN 07",
+        "Type": "Post Deductible HRA",
+        "Linked to Auth N": "AuthN 17, AuthN 27, AuthN 28",
+        "Description": "Pays only after HDHP deductible is met",
+        "Reimbursements": "\u00a7213(d) post deductible",
+        "Cash Out": "No",
+        "COBRA ": "Yes",
+        "Year-to-Year Carryover": "Yes",
+        "Proof": "Yes",
+        "Stakeholders": "Employer, Employee, Dependent, Plan Administrator, IRS",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 08",
+        "Link to HRA& PTC": "LinkN 07",
+        "Other Notes": "HSA compatible structure"
+      }
+    },
+    "LinkN 01": {
+      "id": "LinkN 01",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 01",
+        "Type": "Traditional Integrated HRA",
+        "Link to Auth N": "AuthN 11, AuthN 12, AuthN 27, AuthN 28",
+        "Linked Coverage": "Employer group health plan",
+        "Impact on APTC (if any)": "Employees ineligible for APTC",
+        "Requirements": "Must integrate with group plan\nCOBRA balance = greater of (max annual \u2013 paid) vs. balance at QE\nUnlimited carryover\nThird-party substantiation",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 05, SN 08, SN 09",
+        "Other Notes": "PHSA \u00a7\u00a72711/2713 satisfied via integration rules"
+      }
+    },
+    "LinkN 02": {
+      "id": "LinkN 02",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 02",
+        "Type": "ICHRA",
+        "Link to Auth N": "AuthN 03, AuthN 09, AuthN 12, AuthN 13, AuthN 14, AuthN 27, AuthN 28",
+        "Linked Coverage": "Individual market (on/off Exchange) or Medicare",
+        "Impact on APTC (if any)": "Affordable ICHRA means no APTC. If the ICHRA is unaffordable, employee may opt out and seek APTC",
+        "Requirements": "2025 affordability metric per IRS is 9.02% household income\nIncludes safe harbors\nRequires W-2, rate-of-pay, FPL\nRequires annual coverage attestation\nEmployee opt-out required\nCOBRA applicable\nReimbursement requires proof of individual coverage/Medicare",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 05, SN 06, SN 07, SN 08, SN 10",
+        "Other Notes": NaN
+      }
+    },
+    "LinkN 03": {
+      "id": "LinkN 03",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 03",
+        "Type": "EBHRA",
+        "Link to Auth N": "AuthN 10, AuthN 15, AuthN 27, AuthN 28",
+        "Linked Coverage": "Must be offered alongside group plan (enrollment optional)",
+        "Impact on APTC (if any)": "Neutral (does not disqualify APTC)",
+        "Requirements": "For 2025, the annual cap is $2,150 (2025)\nCannot reimburse major medical \nEmployer must offer group plan\nCOBRA applicable \nSubstantiation required\nEmployee can use this even if not enrolled in group plan",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 05, SN 06, SN 07, SN 08, SN 10",
+        "Other Notes": NaN
+      }
+    },
+    "LinkN 04": {
+      "id": "LinkN 04",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 04",
+        "Type": "QSEHRA",
+        "Link to Auth N": "AuthN 02, AuthN 03, AuthN 19, AuthN 16, AuthN 27, AuthN 28",
+        "Linked Coverage": "Individual coverage (MEC required)",
+        "Impact on APTC (if any)": "Reduces APTC dollar for dollar,  may eliminate if QSEHRA renders coverage affordable",
+        "Requirements": "2025 caps are $6,350/$12,800 \nRequires proof of minimum essential coverage \nIncludes annual notice\nCOBRA exempt",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 05, SN 06, SN 07, SN 08, SN 10",
+        "Other Notes": "IRS Notice 2017-67 details coordination"
+      }
+    },
+    "LinkN 05": {
+      "id": "LinkN 05",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 05",
+        "Type": "Retiree Only HRA",
+        "Link to Auth N": "AuthN 17, AuthN 14, AuthN 27, AuthN 28",
+        "Linked Coverage": "Medicare or retiree coverage",
+        "Impact on APTC (if any)": "APTC not allowed in months a retiree only HRA is provided",
+        "Requirements": "COBRA generally applies\nCarryover allowed\nSubstantiation required",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 05, SN 06, SN 07, SN 08, SN 09",
+        "Other Notes": "Coordinate with Medicare timing & retiree medical options"
+      }
+    },
+    "LinkN 06": {
+      "id": "LinkN 06",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 06",
+        "Type": "Limited Purpose HRA",
+        "Link to Auth N": "AuthN 17, AuthN 27, AuthN 28",
+        "Linked Coverage": "Dental/vision only (excepted benefits)",
+        "Impact on APTC (if any)": "Neutral",
+        "Requirements": "HSA-compatible\nCOBRA applicable\nSubstantiation required",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 05, SN 06, SN 07, SN 08, SN 09",
+        "Other Notes": "*"
+      }
+    },
+    "LinkN 07": {
+      "id": "LinkN 07",
+      "type": "LinkN",
+      "source_file": "HRAs & PTC.csv",
+      "attributes": {
+        "Other MEC Coverage": "LinkN 07",
+        "Type": "Post Deductible HRA",
+        "Link to Auth N": "AuthN 17, AuthN 27, AuthN 28",
+        "Linked Coverage": "HDHP coverage",
+        "Impact on APTC (if any)": "Neutral",
+        "Requirements": "Reimburses only after HDHP deductible met\nCOBRA applicable\nSubstantiation required",
+        "Link to Stakeholders": "SN 01, SN 02, SN 03, SN 04, SN 05, SN 06, SN 07, SN 08, SN 09",
+        "Other Notes": "Preserves HSA eligibility"
+      }
+    },
+    "CalcDE 01": {
+      "id": "CalcDE 01",
+      "type": "CalcDE",
+      "source_file": "Calculation Data Elements.csv",
+      "attributes": {
+        "Calc Data Element Number": "CalcDE 01",
+        "Data Element Type": "LCSP_Monthly_Premium",
+        "Data Element Description": "monthly premium of the lowest-cost Silver plan for self-only Marketplace coverage in the employee's rating area",
+        "Link to CalCN": "CalcN 01",
+        "Link to Authority": "AuthN 03, AuthN 13, AuthN 27, AuthN 28, AuthN 09",
+        "Link to HRA Type": "LinkN 02"
+      }
+    },
+    "CalcDE 02": {
+      "id": "CalcDE 02",
+      "type": "CalcDE",
+      "source_file": "Calculation Data Elements.csv",
+      "attributes": {
+        "Calc Data Element Number": "CalcDE 02",
+        "Data Element Type": "Monthly_ICHRA_Amt",
+        "Data Element Description": "Monthly amount provided to the employee for ICHRA",
+        "Link to CalCN": "CalcN 01",
+        "Link to Authority": "AuthN 03, AuthN 13, AuthN 27, AuthN 28, AuthN 09",
+        "Link to HRA Type": "LinkN 02"
+      }
+    },
+    "CalcDE 03": {
+      "id": "CalcDE 03",
+      "type": "CalcDE",
+      "source_file": "Calculation Data Elements.csv",
+      "attributes": {
+        "Calc Data Element Number": "CalcDE 03",
+        "Data Element Type": "Annual_HH_Income",
+        "Data Element Description": "Annualized income for the employee and their household",
+        "Link to CalCN": "CalcN 01, CalcN 02",
+        "Link to Authority": "AuthN 03, AuthN 13, AuthN 27, AuthN 28, AuthN 09",
+        "Link to HRA Type": "LinkN 02"
+      }
+    },
+    "CalcDE 04": {
+      "id": "CalcDE 04",
+      "type": "CalcDE",
+      "source_file": "Calculation Data Elements.csv",
+      "attributes": {
+        "Calc Data Element Number": "CalcDE 04",
+        "Data Element Type": "Monthly_Empl_Income",
+        "Data Element Description": "Monthly employee income ",
+        "Link to CalCN": "CalcN 01, CalcN 02",
+        "Link to Authority": "AuthN 03, AuthN 13, AuthN 27, AuthN 28, AuthN 09",
+        "Link to HRA Type": "LinkN 02"
+      }
+    },
+    "PI001": {
+      "id": "PI001",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI001",
+        "Stems from Auth": "AuthN 01",
+        "Interp": "Excludes reimbursements for medical care from employee taxable income",
+        "notes": "Anchors HRA tax treatment",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "PI002": {
+      "id": "PI002",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI002",
+        "Stems from Auth": "AuthN 03",
+        "Interp": "Creates ICHRAs & EBHRAs, sets classes, notice, attestation, and integration conditions",
+        "notes": "Tri-agency final rule",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "PI003": {
+      "id": "PI003",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI003",
+        "Stems from Auth": "AuthN 09",
+        "Interp": "ICHRAs must be integrated with individual coverage/Medicare, annual attestation, opt-out allowed",
+        "notes": "Key operational conditions",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "PI004": {
+      "id": "PI004",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI004",
+        "Stems from Auth": "AuthN 10",
+        "Interp": "EBHRAs are excepted benefits, annual cap, cannot reimburse non-excepted major medical premiums",
+        "notes": "Must be offered alongside a group plan",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "PI005": {
+      "id": "PI005",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI005",
+        "Stems from Auth": "AuthN 11",
+        "Interp": "HRAs integrated with group coverage can satisfy ACA market reforms",
+        "notes": "Group integration rules",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "PI006": {
+      "id": "PI006",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI006",
+        "Stems from Auth": "AuthN 13",
+        "Interp": "For 2025 plan years, coverage is \u201caffordable\u201d at 902% of household income",
+        "notes": "Update annually",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "PI007": {
+      "id": "PI007",
+      "type": "PI",
+      "source_file": "Policy Interpretation.csv",
+      "attributes": {
+        "Policy Interp": "PI007",
+        "Stems from Auth": "AuthN 16",
+        "Interp": "QSEHRA 2025 caps: $6,350 (self) / $12,800 (family)",
+        "notes": "Update annually",
+        "Who interpreted this? ": "AM",
+        "Last updated": "08.21.2025"
+      }
+    },
+    "SN 01": {
+      "id": "SN 01",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 01",
+        "Type/Name": "Employer",
+        "Description": "Plan sponsor, responsible for funding, design, notices, compliance",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 03, LinkN 04",
+        "Notes": "Includes ALEs & small employers"
+      }
+    },
+    "SN 02": {
+      "id": "SN 02",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 02",
+        "Type/Name": "Employee",
+        "Description": "Participant eligible for HRA reimbursements",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 03, LinkN 04",
+        "Notes": "Impacts APTC eligibility under ICHRA/QSEHRA"
+      }
+    },
+    "SN 03": {
+      "id": "SN 03",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 03",
+        "Type/Name": "Dependent",
+        "Description": "Spouse/child covered under HRA",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 03, LinkN 04",
+        "Notes": "Relevant for COBRA continuation"
+      }
+    },
+    "SN 04": {
+      "id": "SN 04",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 04",
+        "Type/Name": "Plan Administrator",
+        "Description": "Administers claims, substantiation, notices, appeals",
+        "Link to HRAs & PTC": NaN,
+        "Notes": "Often a TPA"
+      }
+    },
+    "SN 05": {
+      "id": "SN 05",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 05",
+        "Type/Name": "COBRA Administrator",
+        "Description": "Handles COBRA notices & premium collection",
+        "Link to HRAs & PTC": NaN,
+        "Notes": "May be same as Plan Administrator"
+      }
+    },
+    "SN 06": {
+      "id": "SN 06",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 06",
+        "Type/Name": "Issuer Carrier",
+        "Description": "Insurance company issuing policies reimbursed by HRAs",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 03, LinkN 04",
+        "Notes": "Receives premiums (ICHRA)"
+      }
+    },
+    "SN 07": {
+      "id": "SN 07",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 07",
+        "Type/Name": "Marketplace",
+        "Description": "Exchange that determines PTC eligibility / SEPs",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 03, LinkN 04",
+        "Notes": "Uses affordability inputs"
+      }
+    },
+    "SN 08": {
+      "id": "SN 08",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 08",
+        "Type/Name": "IRS",
+        "Description": "Tax enforcement for \u00a7\u00a7105,106,125,36B,4980H,4980B",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 04",
+        "Notes": "Part of tri-agency HRA rule with DOL/HHS"
+      }
+    },
+    "SN 09": {
+      "id": "SN 09",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 09",
+        "Type/Name": "DOL",
+        "Description": "Enforces ERISA, COBRA, market reforms",
+        "Link to HRAs & PTC": NaN,
+        "Notes": "Model notices/tech releases"
+      }
+    },
+    "SN 10": {
+      "id": "SN 10",
+      "type": "SN",
+      "source_file": "Stakeholders.csv",
+      "attributes": {
+        "Stakeholder Number": "SN 10",
+        "Type/Name": "HHS",
+        "Description": "Regulates Exchanges, ACA market reforms",
+        "Link to HRAs & PTC": "LinkN 02, LinkN 04",
+        "Notes": "Part of tri-agency HRA rule with DOL/IRS"
+      }
+    }
+  }
+}
